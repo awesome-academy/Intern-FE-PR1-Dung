@@ -1,0 +1,6 @@
+mixin footerNav(array)
+    ul.navfooter 
+        each val in array 
+            li.navFooter__item
+                i.fas.fa-chevron-right
+                a.navFooter__link(href="#")=val

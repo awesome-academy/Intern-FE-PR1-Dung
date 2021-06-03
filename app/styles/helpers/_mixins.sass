@@ -1,0 +1,64 @@
+@import './_variables'
+@mixin priceSub($a)
+    position: relative
+    z-index: 2
+    &::before
+        position: absolute
+        content: $a
+        top: 20px
+        left: 20px
+        padding: 0.7em 0.4rem
+        border-radius: 50%
+        color: white
+        background-color: red
+        z-index: 5
+@mixin hoverItem($fontsize)
+    position: relative
+    .imgcard
+        &::before
+            content: ''
+            width: 100%
+            top: 0
+            left: 0
+            bottom: 100px
+            position: absolute
+            background-color: $backgroundBlack
+            display: none
+            transition: all 0.25s
+    .hoverShow
+        top: 32%
+        width: 100%
+        left: 9%
+        button
+            font-size: $fontsize
+            @media screen and ( max-width:768px  )
+                font-size: 70%
+            border-radius: 15px !important
+            transition: all 0.75s
+            &:hover
+                background-color: white
+                color: $colorSuccess
+        .addcart
+            width: 70%
+            padding: 0.5rem 1rem
+            margin: 0 auto
+        display: none
+        transition: all 0.75s
+        z-index: 1
+    &:hover
+        .hoverShow
+            display: block
+        .imgcard
+            &::before
+                display: block
+@mixin title
+    border-bottom: 1px solid $borderBlack
+    padding: 1rem
+    padding-left: 0
+    font-weight: 600
+    span
+        border-bottom: 3px solid $colorSuccess
+        padding: 1rem
+        color: $colorSuccess
+        font-size: 150%
+    

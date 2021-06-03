@@ -1,6 +1,87 @@
 extends layout/layout
-
 block vars
 	-title = 'Green House'
 	-bodyClass = 'home-page'
 block container
+	main
+		.main__carosel 
+			#carouselExampleIndicators.carousel.slide(data-ride='carousel')
+				ol.carousel-indicators
+					li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+					li(data-target='#carouselExampleIndicators' data-slide-to='1')
+				.carousel-inner
+					.carousel-item.active
+						img.d-block.w-100(src='../../images/slider_2.jpg' alt='First slide')
+					.carousel-item
+						img.d-block.w-100(src='../../images/slide-1920x590.png' alt='Second slide')
+		.main__body
+			.main__wrapp.container
+				.main__container--featuredProducts
+					.container__featureProducts--title 
+						span Sản phẩm nổi bật
+					.container__featureProducts--body.d-flex.justify-content-between.flex-md-row.flex-column
+						.container__featureProducts--body1.d-flex.flex-column
+							+ItemColumn([{width:'width: 96%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+							.container__featureProducts--body1-1.d-flex
+								+ItemColumn([{width:'width: 48%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 48%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
+						.container__featureProducts--body2.d-flex.flex-column
+							.container__featureProducts--body2-1.d-flex
+								+ItemColumn([{width:'width: 48%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 48%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
+							+ItemColumn([{width:'width: 96%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
+				.main__container--PromotionAndBuyMoreProduct.row.mt-3
+					.container__PromotionProduct.col-12.col-xl-4
+						.container__PromotionProduct--title 
+							span Sản phẩm mua nhiều
+						.container__PromotionProduct--body 
+							+ItemRow([{url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'},{url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 48%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},{width:'width: 48%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 48%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'},{width:'width: 96%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
+					.container__BuyMoreProduct.col-12.col-xl-8
+						.container__BuyMoreProduct--title 
+							span Sản Phẩm khuyến mãi
+							.button
+								a.caro(href='#demo' data-slide='prev' style='opacity: 1; left: -10%;').mr-1
+									i.fas.fa-chevron-left(style='color:#5969f6; font-size:30px;')
+								a.caro(href='#demo' data-slide='next' style='opacity: 1; transform: rotate(-180deg); right: -10%;').mr-1
+									i.fas.fa-chevron-right(style='color:#5969f6; font-size:30px;')
+						.container__BuyMoreProduct--body 
+							.container.pb-5.position-relative
+								#demo.carousel.slide.position-relative(data-ride='carousel')
+									// Indicators
+									ul.carousel-indicators
+										li(data-target='#demo' data-slide-to='0')
+										li.active(data-target='#demo' data-slide-to='1')
+										li(data-target='#demo' data-slide-to='2')
+									// The slideshow
+									.carousel-inner
+										.carousel-item.active.carousel-item-left
+											.container__BuyMoreProduct--body1.d-flex
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 98%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
+											.container__BuyMoreProduct--body2.d-flex
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 98%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
+										.carousel-item.carousel-item-next.carousel-item-left
+											.container__BuyMoreProduct--body1.d-flex
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 98%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
+											.container__BuyMoreProduct--body2.d-flex
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 98%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
+										.carousel-item
+											.container__BuyMoreProduct--body1.d-flex
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 98%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
+											.container__BuyMoreProduct--body2.d-flex
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 98%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
+									// Left and right controls
+									a.carousel-control-prev.d-none(href='#demo' data-slide='prev' style='opacity: 1; left: -10%;')
+										i.fas.fa-chevron-left(style='color:#5969f6; font-size:30px;')
+									a.carousel-control-next.d-none(href='#demo' data-slide='next' style='opacity: 1; transform: rotate(-180deg); right: -10%;')
+										i.fas.fa-chevron-left(style='color:#5969f6; font-size:30px;')
+				img.mt-2.img-fluid(src='../../images/banner-11140x217.png' alt='banner')

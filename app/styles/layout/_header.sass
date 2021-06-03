@@ -1,0 +1,79 @@
+@import  '../helpers/variables'
+header
+    .header__container
+        &--top
+            position: relative
+            z-index: 5
+            background-color: black
+            font-size: 90%
+            color: $colorWhite
+            // height: 40px
+            .header__top--inner
+                display: flex
+                justify-content: space-between
+                align-items: center
+                .header__top--contactAndtime 
+                    width: 50%
+                    display: flex
+                    align-items: center
+                    justify-content: space-evenly
+                    p
+                        padding-top: 15px
+                    .header__top--contact
+                        a
+                            margin-right: 1rem
+                            color: $colorWhite
+                .header__top--sign
+                    a
+                        color: $colorWhite
+                        margin-right: 2rem
+                        i
+                            font-weight: 600 !important
+                            margin: 5px
+        &--middle
+            background-color: #ededed
+            position: relative
+            color: #333333bd
+            .header__middle--inner
+                .header__middle--img
+                    .header__middle--logoname
+                        padding-top: 25px
+                        .logo_descr
+                            color: $colorWhite
+                            font-size: 20px
+                            margin-top: -30px
+                    .header__middle--logo
+                        .logo1
+                            position: relative
+                            z-index: 5
+                        .logo2
+                            margin-left: -50px 
+                            position: relative
+                            z-index: 3
+                            margin-top: -20px                                
+                .header__middle--form
+                    width: 50%
+                    .header__form--block 
+                        .input-group
+                            width: 60%
+                            input
+                                border-radius: 15px
+                                width: 80%
+                            .input-group-append
+                                button
+                                    background-color: white
+                                    border-radius: 15px
+                                    margin-left: -50px
+                                    position: relative
+                                    z-index: 5
+                                    outline: none !important
+                                    &:hover
+                                        color: $colorWhite
+                        .header__cart 
+                            width: 40%
+                            font-size: 20px             
+    .header__navbar
+        .navbar-nav
+            .nav-item
+                i.fa-bars
+                    font-size: 30px !important            

@@ -1,0 +1,70 @@
+header 
+    .header__container
+        .header__container--top
+            .header__top--inner.container.d-none.d-lg-flex 
+                .header__top--contactAndtime 
+                    i.far.fa-clock
+                    p Open time: 8:00 - 18:00 Monday - Sunday 
+                    .header__top--contact
+                        a.contact--link(href="#")
+                            i.fab.fa-facebook-f
+                        a.contact--link(href="#")
+                            i.fab.fa-twitter
+                        a.contact--link(href="#")
+                            i.fab.fa-vuejs
+                        a.contact--link(href="#")
+                            i.fab.fa-instagram
+                .header__top--sign 
+                    a.signup(href="login.html") 
+                        i.far.fa-user   Đăng nhập
+                    a.signup(href="signup.html") 
+                        i.fas.fa-user-plus   Đăng kí   
+        .header__container--middle 
+            .header__middle--inner.container.d-flex.justify-content-around
+                .header__middle--img.d-flex
+                    .header__middle--logoname 
+                        img(src="../../images/logo.png", alt="logo")
+                    .header__middle--logo.d-none.d-xl-block
+                        img.logo1(src="../../images/beside_logo.png", alt="logo2")
+                .header__middle--form.d-flex.flex-column.justify-content-center
+                    span.header__form.d-none.d-lg-block
+                        i.fas.fa-phone-alt &nbsp; Hỗ TRỢ : (04) 6674 2332 - (04) 3768 8904
+                    .header__form--block.d-flex.mt-3.justify-content-evenly
+                        .input-group.mb-3.mr-5.d-none.d-lg-flex
+                            input.border-0.form-control(type='text' placeholder="Tìm Kiếm" )
+                            .input-group-append
+                                button.border-0.btn(type='button') 
+                                    i.fas.fa-search
+                        .header__cart.d-none.d-lg-block
+                            i.fas.fa-shopping-cart &nbsp; 0 Sản Phẩm
+        .header__navbar 
+            nav.navbar.p-3.mb-5.text-white.bg-success.navbar-expand-xl.navbar-light.position-sticky.sticky-top
+                .container
+                    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                        span.navbar-toggler-icon
+                    .collapse.navbar-collapse#navbarSupportedContent
+                        ul.navbar-nav
+                            li.nav-item.p-1
+                                i.fas.fa-bars
+                            li.nav-item.p-1.dropdown
+                                a.nav-link.text-white(href='index.html' role='button')
+                                    | TRANG CHỦ
+                            li.nav-item.p-1.dropdown
+                                a#navbarDropdown.nav-link.text-white.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                                    | GIỚI THIỆU
+                            li.nav-item.p-1.dropdown
+                                a#navbarDropdown.nav-link.text-white.dropdown-toggle(href='#product.html' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                                    | SẢN PHẨM
+                                .dropdown-menu.border-top.border-warning(aria-labelledby='navbarDropdown')
+                                    a.dropdown-item(href='#') SẢN PHẨM 1
+                                    a.dropdown-item(href='#') SẢN PHẨM 1
+                            li.nav-item.p-1.dropdown
+                                a#navbarDropdown.nav-link.text-white.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                                    | SẢN PHẨM MỚI
+                                .dropdown-menu.border-top.border-warning(aria-labelledby='navbarDropdown')
+                                    a.dropdown-item(href='#') SẢN PHẨM 1
+                                    a.dropdown-item(href='#') SẢN PHẨM 1
+                            li.nav-item.p-1
+                                a.nav-link.text-white(href='#') TIN TỨC
+                    i.fas.fa-shopping-cart.d-lg-none.ml-auto
+                    i.fas.fa-search.d-lg-none.ml-3     

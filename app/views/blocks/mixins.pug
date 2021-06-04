@@ -4,3 +4,33 @@ mixin footerNav(array)
             li.navFooter__item
                 i.fas.fa-chevron-right
                 a.navFooter__link(href="#")=val
+
+//- product item column 
+
+mixin ItemColumn(array)
+    each val in array
+        div(style=val.width,class=val.pricesub? 'card mr-4 mt-4 position-relative item-subprice ':' position-relative card mr-4 mt-4  ')
+            .imgcard
+                img.card-img-top(src=val.url alt='Card image cap')
+            .card-body
+                h5.card-title
+                    a(href="product-detail.html")=val.name
+                    
+                span.card-text.mr-1(style='color:red;')= val.price
+                if(val.pricesub)
+                    span(style='text-decoration: line-through; color:#706a6a;').card-text-price=val.pricesub
+            .hoverShow.position-absolute
+                button.btn.btn-success.addcart(type='button') thêm vào giỏ hàng
+                button.btn.btn-success(type='button') 
+                    i.fas.fa-search
+mixin ItemRow(array)
+    each val in array
+        div(class=val.pricesub? 'card mr-4 mt-1 position-relative item-subprice p-1 flex-row':' position-relative card mr-4 mt-1 p-1 flex-row ' style ='height : 110px')
+            .imgcard
+                img.card-img-top(style='width : 140px ; height : 100px' src=val.url alt='Card image cap')
+            .card-body
+                h5.card-title
+                    a(href="product-detail.html")=val.name
+                span.card-text.mr-3(style='color:red;')= val.price
+                if(val.pricesub)
+                    span(style='text-decoration: line-through; color:#706a6a;').card-text-price=val.pricesub

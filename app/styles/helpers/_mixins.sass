@@ -1,4 +1,11 @@
 @import './_variables'
+
+@mixin prefix($property,$value)
+    #{$property}: $value
+    #{'-webkit-' + $property } : $value
+    #{'-o-' + $property }: $value
+    #{'-ms-' + $property }: $value
+
 @mixin priceSub($a)
     position: relative
     z-index: 2
@@ -12,7 +19,9 @@
         color: white
         background-color: red
         z-index: 5
+
 @mixin hoverItem($fontsize)
+    @include prefix(transition,all 0.5s )
     position: relative
     .imgcard
         &::before
@@ -20,11 +29,11 @@
             width: 100%
             top: 0
             left: 0
-            bottom: 100px
+            bottom: 125px
             position: absolute
-            background-color: $backgroundBlack
+            background-color: $colorblackbg
             display: none
-            transition: all 0.25s
+            @include prefix(transition,all 0.25s )
     .hoverShow
         top: 32%
         width: 100%
@@ -34,31 +43,60 @@
             @media screen and ( max-width:768px  )
                 font-size: 70%
             border-radius: 15px !important
-            transition: all 0.75s
+            @include prefix(transition,all 0.75s )
+
             &:hover
                 background-color: white
-                color: $colorSuccess
+                color: $colorSuccess 
         .addcart
             width: 70%
             padding: 0.5rem 1rem
             margin: 0 auto
         display: none
-        transition: all 0.75s
+        @include prefix(transition,all 0.75s )
         z-index: 1
     &:hover
+        @include prefix(transform ,translateY(-5px) )
         .hoverShow
             display: block
         .imgcard
             &::before
                 display: block
+
 @mixin title
-    border-bottom: 1px solid $borderBlack
+    border-bottom: 1px solid $border
     padding: 1rem
     padding-left: 0
     font-weight: 600
     span
-        border-bottom: 3px solid $colorSuccess
+        border-bottom: 3px solid $colorSuccess 
         padding: 1rem
-        color: $colorSuccess
+        color: $colorSuccess 
         font-size: 150%
-    
+    position: relative
+    .button
+        position: absolute
+        right: 20px
+        top: 30px
+        i
+            border-radius: 50%
+            padding: 0.3rem 0.4rem
+            background-color: $colorblackbg
+            color: black !important
+            font-size: 16px !important
+            @include prefix(transition,all 0.75s )
+            
+            &:hover
+                background-color: $colorSuccess
+                color: white !important
+        .fa-chevron-left
+            &:hover
+                @include prefix(transform,translateX(-10px) )
+        .fa-chevron-right
+            &:hover
+                @include prefix(transform,translateX(10px) )
+            
+@mixin hoveritemRow
+    @include prefix(transition ,all 0.5s )
+    &:hover
+        @include prefix(transform ,translateX(10px) )

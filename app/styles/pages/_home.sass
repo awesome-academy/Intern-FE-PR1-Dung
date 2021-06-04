@@ -2,7 +2,9 @@
 @import '../helpers/_variables'
 .item-subprice
     @include priceSub('15%')
+
 main
+    color: $colortext
     .main__body
         .main__container--featuredProducts
             .container__featureProducts--title
@@ -18,26 +20,15 @@ main
             .container__PromotionProduct     
                 .container__PromotionProduct--title      
                     @include title     
-                .container__PromotionProduct--body 
+                .container__PromotionProduct--body
+                    .card
+                        @include hoveritemRow 
             .container__BuyMoreProduct
                 .container__BuyMoreProduct--title
                     @include title
-                    position: relative
-                    .button
-                        position: absolute
-                        right: 20px
-                        top: 30px
-                        i
-                            border-radius: 50%
-                            padding: 0.3rem 0.4rem
-                            background-color: $backgroundBlack
-                            color: black !important
-                            font-size: 16px !important
-                            &:hover
-                                background-color: $colorSuccess
-                                color: white !important
                 .container__BuyMoreProduct--body
-                    .container
+                    
+                    .position-relative
                         .carousel
                             .carousel-inner
                                 .displaynone
@@ -53,3 +44,36 @@ main
                                             font-size: 70%
                                         span 
                                             font-size: 50%
+        .main__container--newProduct 
+            .container__newProduct
+                .container__newProduct--title 
+                    @include title
+                .container__newProduct--body
+                    .position-relative
+                        .carousel
+                            .carousel-inner
+                                .displaynone
+                                    width: 100%
+                                @media screen and ( max-width:  768px)
+                                    font-size: 70% !important
+                                .card
+                                    @include hoverItem(75%)
+                                    @media screen and ( max-width: 1200px )
+                                        .hoverShow
+                                            display: none !important
+                                        .card-title
+                                            font-size: 70%
+                                        span 
+                                            font-size: 50%                            
+        .main__container--news 
+            .container__news--title 
+                @include title
+            .container__news--body 
+                .position-relative
+                    .carousel
+                        .carousel-inner
+                            .carousel-item
+                                .card
+                                    .card-title , a
+                                        color:$colorSuccess
+                                        

@@ -1,10 +1,11 @@
 extends layout/layout
+
 block vars
 	-title = 'Green House'
 	-bodyClass = 'home-page'
 block container
 	main
-		.main__carosel 
+		section.main__carosel 
 			#carouselExampleIndicators.carousel.slide(data-ride='carousel')
 				ol.carousel-indicators
 					li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
@@ -14,9 +15,9 @@ block container
 						img.d-block.w-100(src='../../images/slider_2.jpg' alt='First slide')
 					.carousel-item
 						img.d-block.w-100(src='../../images/slide-1920x590.png' alt='Second slide')
-		.main__body
+		section.main__body
 			.main__wrapp.container
-				.main__container--featuredProducts
+				section.main__container--featuredProducts
 					.container__featureProducts--title 
 						span Sản phẩm nổi bật
 					.container__featureProducts--body.d-flex.justify-content-between.flex-md-row.flex-column
@@ -28,13 +29,13 @@ block container
 							.container__featureProducts--body2-1.d-flex
 								+ItemColumn([{width:'width: 48%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 48%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
 							+ItemColumn([{width:'width: 96%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
-				.main__container--PromotionAndBuyMoreProduct.row.mt-3
-					.container__PromotionProduct.col-12.col-xl-4
+				section.main__container--PromotionAndBuyMoreProduct.row.mt-3
+					aside.container__PromotionProduct.col-12.col-xl-4
 						.container__PromotionProduct--title 
 							span Sản phẩm mua nhiều
 						.container__PromotionProduct--body 
 							+ItemRow([{url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'},{url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 48%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},{width:'width: 48%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 48%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'},{width:'width: 96%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-					.container__BuyMoreProduct.col-12.col-xl-8
+					section.container__BuyMoreProduct.col-12.col-xl-8
 						.container__BuyMoreProduct--title 
 							span Sản Phẩm khuyến mãi
 							.button
@@ -56,32 +57,130 @@ block container
 											.container__BuyMoreProduct--body1.d-flex
 												div.displaynone.d-md-block.d-none.mr-4
 													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 98%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},
+															{width:'width: 98%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
 											.container__BuyMoreProduct--body2.d-flex
-												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 98%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},
+															{width:'width: 98%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
 												div.displaynone.d-md-block.d-none.mr-4
 													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
 										.carousel-item.carousel-item-next.carousel-item-left
 											.container__BuyMoreProduct--body1.d-flex
 												div.displaynone.d-md-block.d-none.mr-4
 													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 98%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},
+															{width:'width: 98%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
 											.container__BuyMoreProduct--body2.d-flex
-												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 98%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},
+															{width:'width: 98%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
 												div.displaynone.d-md-block.d-none.mr-4
 													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
 										.carousel-item
 											.container__BuyMoreProduct--body1.d-flex
 												div.displaynone.d-md-block.d-none.mr-4
 													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 98%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'}
+															,{width:'width: 98%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
 											.container__BuyMoreProduct--body2.d-flex
-												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 98%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
+												+ItemColumn([{width:'width: 98%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},
+															{width:'width: 98%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
+									// Left and right controls	
+				img.mt-2.img-fluid(src='../../images/banner-11140x217.png' alt='banner').mb-5.mt-5
+				.main__container--newProduct 
+					.container__newProduct
+						.container__newProduct--title 
+							span Sản phẩm mới
+							.button
+								a.caro(href='#demo1' data-slide='prev' style='opacity: 1; left: -10%;').mr-1
+									i.fas.fa-chevron-left(style='color:#5969f6; font-size:30px;')
+								a.caro(href='#demo1' data-slide='next' style='opacity: 1; transform: rotate(-180deg); right: -10%;').mr-1
+									i.fas.fa-chevron-right(style='color:#5969f6; font-size:30px;')
+						.container__newProduct--body 
+							.container.pb-5.position-relative
+								#demo1.carousel.slide.position-relative(data-ride='carousel')
+									// Indicators
+									ul.carousel-indicators
+										li(data-target='#demo1' data-slide-to='0')
+										li.active(data-target='#demo1' data-slide-to='1')
+										li(data-target='#demo1' data-slide-to='2')
+									// The slideshow
+									.carousel-inner
+										.carousel-item.active.carousel-item-left
+											.container__newProduct--body1.d-flex
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+												+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},
+															{width:'width: 100%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},
+															{width:'width: 100%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},])
+											.container__newProduct--body2.d-flex
+												+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},
+														{width:'width: 100%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},
+														{width:'width: 100%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},])
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
+										.carousel-item.carousel-item-next.carousel-item-left
+											.container__newProduct--body1.d-flex
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+												+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},
+															{width:'width: 100%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},
+															{width:'width: 100%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},])
+											.container__newProduct--body2.d-flex
+												+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},
+															{width:'width: 100%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},
+															{width:'width: 100%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},])
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
+										.carousel-item
+											.container__newProduct--body1.d-flex
+												div.displaynone.d-md-block.d-none.mr-4
+													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+												+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},
+															{width:'width: 100%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},
+															{width:'width: 100%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},])
+											.container__newProduct--body2.d-flex
+												+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 100%;',
+															url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},
+															{width:'width: 100%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},])
 												div.displaynone.d-md-block.d-none.mr-4
 													+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
 									// Left and right controls
-									a.carousel-control-prev.d-none(href='#demo' data-slide='prev' style='opacity: 1; left: -10%;')
-										i.fas.fa-chevron-left(style='color:#5969f6; font-size:30px;')
-									a.carousel-control-next.d-none(href='#demo' data-slide='next' style='opacity: 1; transform: rotate(-180deg); right: -10%;')
-										i.fas.fa-chevron-left(style='color:#5969f6; font-size:30px;')
-				img.mt-2.img-fluid(src='../../images/banner-11140x217.png' alt='banner')
+				article.main__container--news 
+					.container__news--title.mb-3
+						span Tin tức
+						.button
+							a.caro(href='#demo2' data-slide='prev' style='opacity: 1; left: -10%;').mr-1
+								i.fas.fa-chevron-left(style='color:#5969f6; font-size:30px;')
+							a.caro(href='#demo2' data-slide='next' style='opacity: 1; transform: rotate(-180deg); right: -10%;').mr-1
+								i.fas.fa-chevron-right(style='color:#5969f6; font-size:30px;')
+					.container__news--body 
+						.container.pb-5.position-relative
+							#demo2.carousel.slide.position-relative(data-ride='carousel')
+								// Indicators
+								ul.carousel-indicators
+									li(data-target='#demo2' data-slide-to='0')
+									li.active(data-target='#demo2' data-slide-to='1')
+									li(data-target='#demo2' data-slide-to='2')
+								// The slideshow
+								section.carousel-inner
+									section.carousel-item.active.carousel-item-left
+										div.d-flex
+											.d-none.d-md-block 
+												+newsItem([{url:'../../images/new-1.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Loại cây xanh để bàn đang được giới văn phòng ưa chuộng',content:' Loại cây xanh để bàn đang được giới văn phòng ưa chuộng, Những mẫu cây để bàn đang được giới văn phòng ưa chuộng, câ...'}])
+											+newsItem([{url:'../../images/new-2.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc',content:' Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc, cách bố trí cây cảnh các vị trí trong nhà, hướng dẫ...'},
+														{url:'../../images/new-3.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng',content:' Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng, Bạn muốn tạo bầu không khí mới lạ cho văn phòng của mình bằng...'}])
+									section.carousel-item.carousel-item-next.carousel-item-left
+										div.d-flex
+											.d-none.d-md-block 
+												+newsItem([{url:'../../images/new-1.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Loại cây xanh để bàn đang được giới văn phòng ưa chuộng',content:' Loại cây xanh để bàn đang được giới văn phòng ưa chuộng, Những mẫu cây để bàn đang được giới văn phòng ưa chuộng, câ...'}])
+											+newsItem([{url:'../../images/new-2.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc',content:' Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc, cách bố trí cây cảnh các vị trí trong nhà, hướng dẫ...'},
+														{url:'../../images/new-3.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng',content:' Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng, Bạn muốn tạo bầu không khí mới lạ cho văn phòng của mình bằng...'}])
+									section.carousel-item
+										div.d-flex
+											.d-none.d-md-block 
+												+newsItem([{url:'../../images/new-1.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Loại cây xanh để bàn đang được giới văn phòng ưa chuộng',content:' Loại cây xanh để bàn đang được giới văn phòng ưa chuộng, Những mẫu cây để bàn đang được giới văn phòng ưa chuộng, câ...'}])
+											+newsItem([{url:'../../images/new-2.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc',content:' Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc, cách bố trí cây cảnh các vị trí trong nhà, hướng dẫ...'},
+														{url:'../../images/new-3.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng',content:' Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng, Bạn muốn tạo bầu không khí mới lạ cho văn phòng của mình bằng...'}])
+									

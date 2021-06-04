@@ -1,8 +1,8 @@
-mixin footerNav(array)
-    ul.navfooter 
+mixin Nav(array)
+    ul.nav.mb-
         each val in array 
             li.navFooter__item
-                i.fas.fa-chevron-right
+                i.fas.fa-chevron-right.mr-1
                 a.navFooter__link(href="#")=val
 
 //- product item column 
@@ -12,10 +12,15 @@ mixin ItemColumn(array)
         div(style=val.width,class=val.pricesub? 'card mr-4 mt-4 position-relative item-subprice ':' position-relative card mr-4 mt-4  ')
             .imgcard
                 img.card-img-top(src=val.url alt='Card image cap')
-            .card-body
+            .card-body(style='text-align:center')
                 h5.card-title
-                    a(href="product-detail.html")=val.name
-                    
+                    a(href="product-detail")=val.name
+                div(style='color :red ; font-size: 70%')
+                    i.fas.fa-star
+                    i.fas.fa-star
+                    i.fas.fa-star
+                    i.fas.fa-star
+                    i.far.fa-star
                 span.card-text.mr-1(style='color:red;')= val.price
                 if(val.pricesub)
                     span(style='text-decoration: line-through; color:#706a6a;').card-text-price=val.pricesub
@@ -23,14 +28,32 @@ mixin ItemColumn(array)
                 button.btn.btn-success.addcart(type='button') thêm vào giỏ hàng
                 button.btn.btn-success(type='button') 
                     i.fas.fa-search
+                    
 mixin ItemRow(array)
     each val in array
-        div(class=val.pricesub? 'card mr-4 mt-1 position-relative item-subprice p-1 flex-row':' position-relative card mr-4 mt-1 p-1 flex-row ' style ='height : 110px')
+        div(class=val.pricesub? 'card mr-4 mt-1 position-relative item-subprice p-1 flex-row':' position-relative card mr-4 mt-1 p-1 flex-row ' style ='height : 130px')
             .imgcard
-                img.card-img-top(style='width : 140px ; height : 100px' src=val.url alt='Card image cap')
+                img.card-img-top(style='width : 140px ; height : 120px' src=val.url alt='Card image cap')
             .card-body
-                h5.card-title
-                    a(href="product-detail.html")=val.name
+                h5.card-title 
+                    a(href="product-detail.html")=val.name 
+                div(style='color :red ; font-size: 70%')
+                    i.fas.fa-star
+                    i.fas.fa-star
+                    i.fas.fa-star
+                    i.fas.fa-star
+                    i.far.fa-star
                 span.card-text.mr-3(style='color:red;')= val.price
                 if(val.pricesub)
                     span(style='text-decoration: line-through; color:#706a6a;').card-text-price=val.pricesub
+
+mixin newsItem(array)
+    each val in array 
+        .card.mr-3.border-none(style='height :auto')
+            img.card-img-top(src=val.url alt='Card image cap')
+            .card-body
+                a.mb-2.card-title
+                    h5=val.title
+                h6.mb-1.card-subtitle.mb-2.text-muted=val.subtitle
+                p.mb-1.card-text=val.content
+                a.card-link(href='#news') Đọc tiếp...

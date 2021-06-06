@@ -1,10 +1,10 @@
 @import './_variables'
-
 @mixin prefix($property,$value)
     #{$property}: $value
     #{'-webkit-' + $property } : $value
     #{'-o-' + $property }: $value
     #{'-ms-' + $property }: $value
+
 
 @mixin priceSub($a)
     position: relative
@@ -20,20 +20,25 @@
         background-color: red
         z-index: 5
 
+
 @mixin hoverItem($fontsize)
     @include prefix(transition,all 0.5s )
     position: relative
     .imgcard
+        
         &::before
             content: ''
             width: 100%
             top: 0
             left: 0
-            bottom: 125px
+            bottom: 115px
             position: absolute
             background-color: $colorblackbg
             display: none
             @include prefix(transition,all 0.25s )
+        @media screen and ( max-width: 768px )
+            &::before
+                display: none
     .hoverShow
         top: 32%
         width: 100%
@@ -63,6 +68,7 @@
             &::before
                 display: block
 
+                
 @mixin title
     border-bottom: 1px solid $border
     padding: 1rem
@@ -96,7 +102,26 @@
             &:hover
                 @include prefix(transform,translateX(10px) )
             
+
 @mixin hoveritemRow
     @include prefix(transition ,all 0.5s )
     &:hover
         @include prefix(transform ,translateX(10px) )
+
+@mixin navStyle
+    display: flex
+    flex-direction: column
+    height: auto
+    li
+        &:hover
+            a,i
+                text-decoration: none
+                color: $colorSuccess
+        border-bottom: 1px solid $colortext 
+        padding: 0.3rem
+        a,i
+            font-weight: 600
+            color: $colortext 
+            
+        i
+            font-size: 80%

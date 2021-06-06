@@ -1,5 +1,8 @@
 @import  '../helpers/variables'
 footer
+    @media screen and ( max-width: 992px )
+        font-size: 90%
+        
     font-size: 90%
     color: white
     background-color: $colorBlack
@@ -12,11 +15,12 @@ footer
                     color: white
         .footer__container--body
             .footer__container--about
-            .col-xl-2
+            .col-lg-2
                 .title
                     height: 40px
                     font-size: 130%
                 ul
+                    flex-direction: column
                     li
                         a
                             color: white

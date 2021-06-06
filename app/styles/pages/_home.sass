@@ -10,6 +10,9 @@ main
             .container__featureProducts--title
                 @include title
             .container__featureProducts--body
+                .container__featureProducts--body1-1, .container__featureProducts--body2-1
+                    @media screen and ( max-width: 768px )
+                        flex-direction: column
                 .card
                     @media screen and ( max-width: 1200px )
                         .hoverShow
@@ -31,8 +34,6 @@ main
                     .position-relative
                         .carousel
                             .carousel-inner
-                                .displaynone
-                                    width: 100%
                                 @media screen and ( max-width:  768px)
                                     font-size: 70% !important
                                 .card
@@ -74,6 +75,7 @@ main
                         .carousel-inner
                             .carousel-item
                                 .card
-                                    .card-title , a
-                                        color:$colorSuccess
-                                        
+                                    .card-title 
+                                        color: $colorSuccess
+                                    a 
+                                        color: $colorSuccess

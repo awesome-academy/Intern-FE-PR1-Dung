@@ -4,3 +4,31 @@ block vars
 	-title = 'Green House login'
 	-bodyClass = 'login'
 block container
+	section.signin__container 
+		.signin__container--wrap.container
+			.signin__header
+				nav(aria-label='breadcrumb')
+					ol.breadcrumb
+						li.breadcrumb-item
+							a(href='#') Home
+						li.breadcrumb-item.active(aria-current='page') Đăng nhập
+			.signin__body.row.p-4 
+				.signin__body--information.col-lg-6.col-12.mb-5
+					h2.information__title.mb-5.text-success THÔNG TIN CÁ NHÂN
+					form.information__form
+						.form-group.mb-4
+							label(for='email__signin') Email của bạn
+							input#email__signin.form-control(type='email' aria-describedby='emailHelp' placeholder='your email')
+						.form-group.mb-4
+							label(for='password__signin') Mật khẩu của bạn
+							input#password__signin.form-control(type='password' placeholder='Password')
+						.form-check.mb-4
+							input#checkbox__signin.form-check-input(type='checkbox')
+							label.form-check-label(for='checkbox__signin') ghi nhớ tài khoản
+							a(href="#").ml-3 bạn quên mật khẩu ? 
+						a.btn(href='index.html') ĐĂNG NHẬP
+
+				.signin__body--notAccount.col-lg-6.col-12
+					h2.notAccount__title.mb-5.text-success BẠN CHƯA CÓ TÀI KHOẢN ?
+					p.notAccount__content đăng kí tài khoản ngay để có thể mua nhanh chóng và dễ dàng hơn ! Ngoài ra còn có nhiều chính sách ưu đãi dành cho các thành viên citybike
+					a.btn(href='signup.html') ĐĂNG KÍ

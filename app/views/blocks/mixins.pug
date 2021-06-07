@@ -6,7 +6,6 @@ mixin Nav(array)
                 a.navFooter__link(href="#")=val
 
 //- product item column 
-
 mixin ItemColumn(array)
     each val in array
         div(style=val.width,class=val.pricesub? 'card mr-4 mt-4 position-relative item-subprice ':' position-relative card mr-4 mt-4  ')

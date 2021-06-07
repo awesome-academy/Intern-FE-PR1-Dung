@@ -26,12 +26,12 @@ mixin ItemColumn(array)
                     span(style='text-decoration: line-through; color:#706a6a;').card-text-price=val.pricesub
             .hoverShow.position-absolute
                 button.btn.btn-success.addcart(type='button') thêm vào giỏ hàng
-                button.btn.btn-success(type='button') 
+                button.btn.btn-success.mb-3(type='button') 
                     i.fas.fa-search
                     
 mixin ItemRow(array)
     each val in array
-        div(class=val.pricesub? 'card mr-4 mt-1 position-relative item-subprice p-1 flex-row':' position-relative card mr-4 mt-1 p-1 flex-row ' style ='height : 130px')
+        div(class=val.pricesub? 'card mr-4 mt-1 position-relative item-subprice p-1 flex-column flex-sm-row justify-content-center':'justify-content-center position-relative card mr-4 mt-1 p-1 flex-column flex-sm-row ' )
             .imgcard
                 img.card-img-top(style='width : 140px ; height : 120px' src=val.url alt='Card image cap')
             .card-body

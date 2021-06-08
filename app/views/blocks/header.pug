@@ -1,8 +1,8 @@
 header 
     .header__container
         .header__container--top
-            .header__top--inner.container.d-none.d-lg-flex 
-                .header__top--contactAndtime 
+            .header__top--inner.container.d-lg-flex 
+                .header__top--contactAndtime.d-none.d-lg-flex 
                     i.far.fa-clock
                     p Open time: 8:00 - 18:00 Monday - Sunday 
                     .header__top--contact
@@ -66,5 +66,6 @@ header
                                     a.dropdown-item(href='#') SẢN PHẨM 1
                             li.nav-item.p-1
                                 a.nav-link.text-white(href='#') TIN TỨC
-                    i.fas.fa-shopping-cart.d-lg-none.ml-auto
+                    a(href="cart.html").ml-auto.text-light 
+                        i.fas.fa-shopping-cart.d-lg-none.ml-auto
                     i.fas.fa-search.d-lg-none.ml-3     

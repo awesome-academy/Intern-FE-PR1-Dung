@@ -185,3 +185,34 @@
             left: 0
             right: 0
             border: 1px solid $colorprev
+
+@mixin tooltip
+    &:hover
+        .quote
+            display: block
+    position: relative
+    width: auto
+    height: auto
+    padding: 3px 5px
+    border-radius: 10px
+    span, i
+        color: white
+    .quote
+        z-index: 1000
+        display: none
+        top: -10px
+        margin: 10px
+        width: 30px
+        height: 30px
+        background-color: $backgroundtooltip
+        position: absolute
+        right: -50px
+        text-align: center
+        &::before
+            content: ""
+            position: absolute
+            top: 5px
+            left: -10px
+            border-right:  10px solid $backgroundtooltip
+            border-bottom:  10px solid transparent
+            border-top: 10px solid transparent

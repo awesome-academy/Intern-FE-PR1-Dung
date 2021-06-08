@@ -25,7 +25,6 @@
     @include prefix(transition,all 0.5s )
     position: relative
     .imgcard
-        
         &::before
             content: ''
             width: 100%
@@ -42,17 +41,13 @@
     .hoverShow
         top: 32%
         width: 100%
-        left: 9%
+        left: 4%
         button
             font-size: $fontsize
             @media screen and ( max-width:768px  )
                 font-size: 70%
             border-radius: 15px !important
             @include prefix(transition,all 0.75s )
-
-            &:hover
-                background-color: white
-                color: $colorSuccess 
         .addcart
             width: 70%
             padding: 0.5rem 1rem
@@ -62,6 +57,7 @@
         z-index: 1
     &:hover
         @include prefix(transform ,translateY(-5px) )
+        box-shadow: 3px 5px 3px 5px $border
         .hoverShow
             display: block
         .imgcard
@@ -70,6 +66,8 @@
 
                 
 @mixin title
+    @media screen and ( max-width:1024px  )
+        font-size: 75%
     border-bottom: 1px solid $border
     padding: 1rem
     padding-left: 0
@@ -113,7 +111,10 @@
     flex-direction: column
     height: auto
     li
+        @include prefix(transition , all 0.5s )
         &:hover
+            @include prefix(transform , translateX(10px) )
+            
             a,i
                 text-decoration: none
                 color: $colorSuccess
@@ -125,3 +126,62 @@
             
         i
             font-size: 80%
+
+@mixin hoverNavbar
+    padding-right: 15px !important
+    position: relative
+    &::before
+        position: absolute
+        bottom: 0
+        left: 0
+        content: ''
+        width: 0%
+        height: 2px
+        background-color: white
+        @include prefix(transition,all 0.5s )
+        
+    &::after
+        @include prefix(transition,all 0.5s )
+        position: absolute
+        bottom: 0
+        left: 0
+        content: ''
+        width: 2px
+        height: 0%
+        background-color: white
+    &:hover
+        &::after
+            height: 80%
+        &::before
+            width: 80%
+
+@mixin btn($colorprev,$colornext)
+    margin-top: 1rem
+    @include prefix(border-radius ,15px !important )
+    position: relative
+    background-color: $colorprev
+    color: $colornext
+    @include prefix(transition,all 0.5s )
+    border: 1px solid $colornext
+    &::before
+        position: absolute
+        z-index: -10
+        content: ''
+        top: 0
+        right: 51%
+        left: 51%
+        width: 0
+        height: 100%
+        background: $colornext
+        border: 1px solid $colornext
+        @include prefix(transition,all 0.5s )
+    &:hover
+        background: none
+        color: $colorprev !important
+        z-index: 1000
+        &::before
+            @include prefix(border-radius , 15px !important )
+            width: 100%
+            left: 0
+            right: 0
+            border: 1px solid $colorprev

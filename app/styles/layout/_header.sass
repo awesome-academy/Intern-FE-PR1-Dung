@@ -1,4 +1,5 @@
 @import  '../helpers/variables'
+@import '../helpers/_mixins'
 header
     .header__container
         &--top
@@ -75,5 +76,6 @@ header
     .header__navbar
         .navbar-nav
             .nav-item
+                @include hoverNavbar
                 i.fa-bars
                     font-size: 30px !important            

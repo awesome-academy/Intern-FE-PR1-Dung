@@ -2,7 +2,9 @@
 @import '../helpers/_variables'
 .item-subprice
     @include priceSub('15%')
-
+.main__body 
+    button
+        @include btn($colorSuccess ,white )
 main
     color: $colortext
     .main__body
@@ -25,6 +27,10 @@ main
                     @include title     
                 .container__PromotionProduct--body
                     .card
+                        img
+                            @media screen and ( max-width: 576px )
+                                width: 100% !important
+                                
                         @include hoveritemRow 
             .container__BuyMoreProduct
                 .container__BuyMoreProduct--title

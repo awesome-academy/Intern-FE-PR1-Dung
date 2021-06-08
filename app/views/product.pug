@@ -12,7 +12,7 @@ block container
 						a(href='index.html') Home
 					li.breadcrumb-item.active(aria-current='page') Danh sách sản phẩm
 			main.product__body.row
-				aside.col-3.d-md-block.d-none
+				aside.col-3.d-xl-block.d-none
 					.navbar__list 
 						.navbar__list--title 
 							span Danh sách sản phẩm
@@ -45,8 +45,8 @@ block container
 								li
 									.pink
 									a(href="#") hồng
-				section.product__body--gridorlist.col-md-9.col-12
-					img.img-fluid.mt-3(src='/app/images/collection_banner.png' alt='banner-product')
+				section.product__body--gridorlist.col-xl-9.col-12
+					img.img-fluid.mt-3(src='../../images/collection_banner.png' alt='banner-product')
 					header.product__body--header.d-flex.m-3.justify-content-around
 						ul#pills-tab.nav.nav-pills.mb-3.d-flex.justify-content-center(role='tablist')
 							li.nav-item
@@ -70,17 +70,43 @@ block container
 						#pills-tabContent.tab-content
 							#product-grid.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='product-grid-tab')
 								.div.d-flex.flex-wrap 
-									+ItemColumn([{url :'/app/images/spx2-8.png',name :'cây cung điện',price:'520.000'},
-											{url :'/app/images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'500.000'},
-											{url :'/app/images/spx2-11.png',name :'cây phát tài',price:'300.000'},
-											{url :'/app/images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'330.000'},
-											{url :'/app/images/spx2-15.png',name :'cây dạ lam',price:'250.000',pricesub:'300.000'},
-											{url :'/app/images/spx2-12.png',name :'cây danh dự',price:'250.000'},
-											{url :'/app/images/spx2-7.png',name :'cây dứa nhỏ',price:'320.000',pricesub:'400.000'},
-											{url :'/app/images/spx2-3.png',name :'cây chân chim',price:'320.000',pricesub:'400.000'},
-											{url :'/app/images/spx2-2.png',name :'cây cọ ta',price:'320.000',pricesub:'400.000'},
-											{url :'/app/images/spx2-1.png',name :'cây đa búp đỏ',price:'250.000'},
-											{url :'/app/images/spx2-14.png',name :'cây dứa nhỏ',price:'250.000'},
-											{url :'/app/images/spx2-12.png',name :'cây danh dự',price:'250.000'},
+									+ItemColumn([{url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},
+											{url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'500.000'},
+											{url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},
+											{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'330.000'},
+											{url :'../../images/spx2-15.png',name :'cây dạ lam',price:'250.000',pricesub:'300.000'},
+											{url :'../../images/spx2-12.png',name :'cây danh dự',price:'250.000'},
+											{url :'../../images/spx2-7.png',name :'cây dứa nhỏ',price:'320.000',pricesub:'400.000'},
+											{url :'../../images/spx2-3.png',name :'cây chân chim',price:'320.000',pricesub:'400.000'},
+											{url :'../../images/spx2-2.png',name :'cây cọ ta',price:'320.000',pricesub:'400.000'},
+											{url :'../../images/spx2-1.png',name :'cây đa búp đỏ',price:'250.000'},
+											{url :'../../images/spx2-14.png',name :'cây dứa nhỏ',price:'250.000'},
+											{url :'../../images/spx2-12.png',name :'cây danh dự',price:'250.000'},
 											])
-						
+							#product-list.tab-pane.fade(role='tabpanel' aria-labelledby='product-list-tab')
+								.div
+									+ItemList([{url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'500.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'330.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-15.png',name :'cây dạ lam',price:'250.000',pricesub:'300.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-12.png',name :'cây danh dự',price:'250.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-7.png',name :'cây dứa nhỏ',price:'320.000',pricesub:'400.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-3.png',name :'cây chân chim',price:'320.000',pricesub:'400.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-2.png',name :'cây cọ ta',price:'320.000',pricesub:'400.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-1.png',name :'cây đa búp đỏ',price:'250.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-14.png',name :'cây dứa nhỏ',price:'250.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											{url :'../../images/spx2-12.png',name :'cây danh dự',price:'250.000',content :'Cây cung điện vàng mang ý nghĩa quý phái và sang trọng, là cây thủy canh để bàn như một lời chúc phúc cho cá nhân hay  doanh nghiệp luôn được thịnh vượng, phát tài'},
+											])
+						nav(aria-label='Page navigation example').mt-5.d-flex.d-flex.justify-content-end.mr-4
+							ul.pagination
+								li.page-item
+									a.page-link(href='#') Trang trước
+								li.page-item
+									a.page-link(href='#') 1
+								li.page-item
+									a.page-link(href='#') 2
+								li.page-item
+									a.page-link(href='#') 3
+								li.page-item
+									a.page-link(href='#') Trang tiếp 

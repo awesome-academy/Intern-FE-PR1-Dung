@@ -1,0 +1,13 @@
+@import '../helpers/_variables'
+@import '../helpers/_mixins'
+.signup__page--wrap
+    input, select
+        @include prefix(border-radius , 30px !important )
+        @include prefix(transition, all 0.5s )
+        &:focus
+            @include prefix(transform , scaleX(1.02))
+    .back
+        @include btn($colorSuccess,white)
+    .signup
+        @include btn(white,$colorSuccess)
+         

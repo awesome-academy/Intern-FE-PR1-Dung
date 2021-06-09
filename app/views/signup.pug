@@ -1,0 +1,39 @@
+extends layout/layout
+
+block vars
+	-title = 'Green House log out'
+	-bodyClass = 'sign-up'
+block container
+	section.signup__page 
+		.signup__page--wrap.container.p-5 
+			form
+				h2.text-success.mb-3 THÔNG TIN CÁ NHÂN
+				.form-row
+					.form-group.col-md-6
+						label(for='name') Họ và Tên
+						input#name.form-control(type='text' required)
+					.form-group.col-md-6
+						label(for='phone') Số ĐT
+						input#phone.form-control(type='text'  required)
+				.form-row
+					.form-group.col-md-6
+						label(for='inputEmai') Mật khẩu
+						input#inputEmai.form-control(type='email' required)
+					.form-group.col-md-6
+						label(for='website') Website của bạn
+						input#website.form-control(type='text'  required)
+				.form-group.mb-5
+					.form-check
+						input#gridCheck.form-check-input(type='checkbox')
+						label.form-check-label(for='gridCheck') đăng kí nhập thông tin qua email
+				h2.text-success.mb-3 THÔNG TIN TÀI KHOẢN	
+				.form-row
+					.form-group.col-md-6
+						label(for='password') Mật khẩu
+						input#password.form-control(type='password'  required)
+					.form-group.col-md-6
+						label(for='re-password') Nhập lại mật khẩu
+						input#re-password.form-control(type='password' required)
+				a.btn.back(href='index.html').mr-3 QUAY LẠI
+				a.btn.signup(href='login.html') ĐĂNG KÍ
+				

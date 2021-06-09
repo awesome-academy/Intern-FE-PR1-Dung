@@ -1,0 +1,28 @@
+@import '../helpers/_variables'
+@import '../helpers/_mixins'
+.breadcrumb
+    background: none
+.block__table
+    a
+        &:hover
+            i
+                color: $colorSuccess
+    i
+        color: $colortext
+        
+    table
+        text-align: center
+    // overflow-x: scroll 
+    @media screen and ( max-width:1024px  )
+        font-size: 80%      
+        img
+            width: 100px !important
+            height: 100px    
+    @media screen and ( max-width:768px  )
+        font-size: 60% 
+        img
+            width: 80px !important
+            height: 80px 
+        table
+            width: 768px
+        overflow-x: scroll

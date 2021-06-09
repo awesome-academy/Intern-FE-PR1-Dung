@@ -1,0 +1,48 @@
+@import '../helpers/_variables'
+@import '../helpers/_functions'
+@import '../helpers/_mixins'
+@keyframes drop
+    0% 
+        @include prefix(opacity, 0)
+    70% 
+        @include prefix(transform ,translateY(1000px))
+        
+    100%
+        @include prefix(transform ,translateY(950px))
+        @include prefix(opacity, 1)
+@keyframes Swing
+    0%
+        @include prefix(transform ,translateY(980px) rotateZ(0deg) )
+        opacity: 1
+    40%
+        @include prefix(transform ,translateY(980px) rotateZ(-90deg) )
+    70%
+        @include prefix(transform ,translateY(980px) rotateZ(-70deg) )
+    100%
+        @include prefix(transform ,translateY(980px) rotateZ(-80deg) )
+        opacity: 0
+.popup 
+    border-radius: 10px
+    top: -800px
+    position: absolute
+    right: 20%
+    background-color: white
+    width: 900px
+    height: auto
+    color : $colortext
+    z-index: 1200
+    transform-origin: right top
+    @include prefix( animation, drop 0.5s ease forwards )
+.header__form--title1
+    font-family: 'Stint Ultra Condensed', cursive
+.header__form--title2
+    color: $colorSuccess 
+.close
+   position: absolute
+   top: 10px 
+   right: 20px
+//    Swing 1s 1.5s ease forwards
+#close
+    &:checked
+        ~ .popup
+            animation:  Swing 1s ease forwards

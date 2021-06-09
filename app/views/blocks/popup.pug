@@ -1,0 +1,19 @@
+input#close(type="checkbox", name="close" hidden)
+section.popup
+    label(for="close").close 
+        i.fas.fa-times
+    .popup__wrapper.row.p-5 
+        img.col-5(src="../../images/flowers.png", alt="flowers")
+        .popup__body.col-7.p-5 
+            .container__form
+                h2.header__form--title1 Nhận tin tức từ chúng tôi
+                h3.header__form--title2.mb-4 ĐĂNG KÍ EMAIL NGAY HÔM NAY
+                .input-group.mb-2
+                    input.form-control(type='text' placeholder='Nhập email của bạn vào đây')
+                    .input-group-append
+                        span#basic-addon2.input-group-text.bg-success
+                            i.fas.fa-paper-plane.text-light 
+                h7.footer__form--title2 đăng kí email ngay hôm nay để nhận các thông tin về sự kiện và các chương trình giảm giá từ chúng tôi
+                .group__input.mt-4
+                    input#checkbox(type="checkbox", name="checkbox")
+                    label(for="checkbox") Không hiển thị lại thông báo này nữa

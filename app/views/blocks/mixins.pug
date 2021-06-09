@@ -6,7 +6,6 @@ mixin Nav(array)
                 a.navFooter__link(href="#")=val
 
 //- product item column 
-
 mixin ItemColumn(array)
     each val in array
         div(style=val.width,class=val.pricesub? 'card mr-4 mt-4 position-relative item-subprice ':' position-relative card mr-4 mt-4  ')
@@ -79,3 +78,16 @@ mixin ItemList(array)
                 button.btn.btn-success.addcart(type='button') thêm vào giỏ hàng
                 button.btn.btn-success(type='button') 
                     i.fas.fa-search
+mixin itemcart(array)
+    each val in array 
+        tr
+            td(scope='row')
+                img(src=val.url, alt="imgproduct" style ="width: 150px")
+            td.text-success=val.name 
+            td=val.price 
+            td
+                input#count(type="number", name="" value =val.count style ="width: 50px")
+            td= val.price 
+            td
+                a(href="#") 
+                    i.fas.fa-trash-alt

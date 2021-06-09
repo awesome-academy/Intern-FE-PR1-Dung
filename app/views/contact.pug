@@ -4,3 +4,40 @@ block vars
 	-title = 'Green House contact'
 	-bodyClass = 'contact'
 block container
+	section.contact 
+		.contact__body
+			nav(aria-label='breadcrumb').container
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href='index.html') Home
+					li.breadcrumb-item.active(aria-current='page') Liên hệ
+			.contact__map.container-fluid 
+				iframe(src='https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3833.797025248947!2d108.15701151482986!3d16.07601928887678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m5!1s0x314218dbe98982e9%3A0x5628a116ba9465ee!2zMjAzIEjhu5MgVMO5bmcgTeG6rXUsIEhvw6AgTWluaCwgTGnDqm4gQ2hp4buDdSwgxJDDoCBO4bq1bmcgNTUwMDAwLCBWaWV0bmFt!3m2!1d16.0760193!2d108.1592002!4m0!5e0!3m2!1svi!2s!4v1623201361390!5m2!1svi!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy')
+			.contact__wrap.container 
+				.contact__wrap--main.row.mt-3.mb-3 
+					.contact__main--form.col-md-6.col-12
+						h2.title THÔNG TIN LIÊN HỆ
+						form.information__form
+							.form-group.mb-4.mt-2
+								label(for='mail') Email của bạn :
+								input#mail.form-control(type='text' aria-describedby='emailHelp' )
+							.form-group.mb-4
+								label(for='name') Họ và tên :
+								input#name.form-control(type='text' aria-describedby='name' )
+							.form-group.mb-4
+								label(for='tel') Số điện thoại :
+								input#tel.form-control(type='tel' aria-describedby='tel' )
+							.form-group.mb-4
+								label(for='tel') Bình luận :
+								textarea#comment.form-control(rows='3')
+							a.btn(href='index.html') LƯU THÔNG TIN
+							
+					.contact__main--info.col-md-6.col-12.p-5
+						img.img-fluid(src='../../images/logo.png' alt='logo')
+						p.mt-3 DKT được thành lập với niềm đam mê và khát vọng thành công trong lĩnh vực thương mại điện tử. Chúng tôi đã và đang khẳng định được vị trí hàng đầu bằng những sản phẩm 
+						.phone.d-flex.mb-2
+							i.mr-2.fas.fa-phone
+							span Điện thoại : (84-4) 66.558.868
+						.email.d-flex
+							i.mr-2.far.fa-envelope
+							span Email: info@dkt.com.vn

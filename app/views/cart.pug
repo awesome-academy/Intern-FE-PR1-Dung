@@ -4,3 +4,47 @@ block vars
 	-title = 'Green House cart'
 	-bodyClass = 'cart'
 block container
+block container
+	section.cart 
+		.cart__wrap.container 
+			nav(aria-label='breadcrumb')
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href='index.html') Home
+					li.breadcrumb-item.active(aria-current='page') Giỏ hàng
+			h2.mb-5.mt-5 GIỎ HÀNG
+			section.block__table.table-responsive.table-inf
+				table.table
+					thead.bg-success
+						tr
+							th(scope='col') Hình ảnh
+							th(scope='col') Tên Sản Phẩm
+							th(scope='col') Đơn giá
+							th(scope='col') Số Lượng
+							th(scope='col') Thành tiền
+							th(scope='col') Xóa
+					tbody
+						+itemcart([{url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000',count:2}])
+						+itemcart([{url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',count:2}])
+						+itemcart([{url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000',count:2}])
+
+				.link.d-flex.justify-content-end 
+					a(href="index.html").mr-3 HỦY ĐƠN HÀNG  
+					a(href="#") TIẾP TỤC MUA 			
+			.block__table.d-flex.justify-content-end.mt-5
+				table.table.col-md-6.col-12
+					tbody.text-success
+						tr
+							th(scope='row') TỔNG TIỀN (CHƯA THUẾ)
+							td 1000.0000 VNĐ
+
+						tr
+							th(scope='row') THUẾ VAT(10%)
+							td 100.000 VNĐ
+						tr.bg-success.text-light
+							th(scope='row') TỔNG PHẢI THANH TOÁN
+							td 900.000 VNĐ
+						tr
+							th(scope='row')
+							td 
+								a(href="#") THANH TOÁN

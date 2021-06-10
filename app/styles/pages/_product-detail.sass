@@ -1,0 +1,113 @@
+@import  '../helpers/_variables'
+@import '../helpers/_mixins'
+
+        
+.productDetail 
+    .nav-item
+        img
+            width: 60px
+    #pills-tab
+        .active
+            padding: 3px
+            margin-top: 3px 
+.producDetail__body--content
+    a, input, label
+        cursor: pointer
+    header, section
+        border-bottom: 1px solid $border
+        padding: 15px 0px  
+        color: $colortext
+    header
+        span
+            font-weight: 500
+    section
+        span
+            color: black
+        justify-items: center
+        button
+            border: 1px solid $border
+            background-color: white 
+            margin-right: 5px
+            height: 30px
+            color: $colortext
+        .count 
+            width: 30px
+        .number
+            width: 90px
+        .search, label
+            padding: 5px 10px
+            border-radius: 50%
+            border: 1px solid $border
+            color: black
+        .far.fa-heart
+            color: black
+
+        .fa-heart
+            color: red
+        .fas.fa-heart
+            display: none
+        .buyNow
+            @include btn($colorSuccess ,white )
+            padding: 5px 10px
+            &:hover
+                text-decoration: none
+        #checkHeard
+            &:checked
+                ~ label
+                    .far
+                        display: none
+                    .fas
+                        display: inline
+    .body__tooltip
+        @include tooltip
+        cursor: pointer
+    .facebook
+        background-color: $primary1 
+    .tweet
+        background-color: $primary2
+    .plus
+        background-color: tomato
+.productDetail__body--tab
+    li
+        width: 30%
+    .tab-content
+        padding: 1rem
+.main__container--product 
+    .container__product
+        .container__product--title 
+            @include title
+        .container__product--body
+            .position-relative
+                .carousel
+                    .carousel-inner
+                        .displaynone
+                            width: 100%
+                        @media screen and ( max-width:  768px)
+                            font-size: 70% !important
+                        .card
+                            @include hoverItem(75%)
+                            @media screen and ( max-width: 1200px )
+                                .hoverShow
+                                    display: none !important
+                                .card-title
+                                    font-size: 90% !important  
+                                span 
+                                    font-size: 75% !important   
+.productDetail 
+    .main__container--product 
+        button
+            @include btn($colorSuccess , white )
+    @media screen and ( max-width: 768px )
+        font-size: 90%
+    @media screen and ( max-width: 487px )
+        font-size: 85% 
+        .nav-pills
+            flex-wrap: nowrap 
+            .nav-item
+
+                img
+                    width: 40px
+                    padding: 0
+                    margin: 0
+        .body__tooltip
+            margin-right: 30px !important 

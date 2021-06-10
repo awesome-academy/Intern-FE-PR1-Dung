@@ -4,3 +4,162 @@ block vars
 	-title = 'Green House product-detail'
 	-bodyClass = 'product__detail'
 block container
+	section.productDetail 
+		.productDetail__wrap.container 
+			nav(aria-label='breadcrumb')
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href='index.html') Home
+					li.breadcrumb-item.active(aria-current='page') Cây dạ lam 
+			.productDetail__body.row 
+				.producDetail__body--image.col-12.col-lg-6 
+					#pills-tabContent.tab-content
+							#img1.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='img1-tab')
+								img.img-fluid(src="../../images/spx2-1.png" alt="spx2-1.png" )
+							#img2.tab-pane.fade(role='tabpanel' aria-labelledby='img2-tab')
+								img.img-fluid(src="../../images/spx2-2.png" alt="spx2-2.png" )
+							#img3.tab-pane.fade(role='tabpanel' aria-labelledby='img3-tab')
+								img.img-fluid(src="../../images/spx2-3.png" alt="spx2-3.png" )
+							#img4.tab-pane.fade(role='tabpanel' aria-labelledby='img4-tab')
+								img.img-fluid(src="../../images/spx2-4.png" alt="spx2-4.png" )
+							#img5.tab-pane.fade(role='tabpanel' aria-labelledby='img5-tab')
+								img.img-fluid(src="../../images/spx2-5.png" alt="spx2-5.png" )
+					ul#pills-tab.nav.nav-pills.mb-3.d-flex.justify-content-center(role='tablist')
+						li.nav-item
+							a#img1-tab.nav-link.active(data-toggle='pill' href='#img1' role='tab' aria-controls='img1' aria-selected='true') 
+								img(src="../../images/spx2-1.png" alt="spx2-1.png"  )
+						li.nav-item
+							a#img2-tab.nav-link(data-toggle='pill' href='#img2' role='tab' aria-controls='img2' aria-selected='false') 
+								img(src="../../images/spx2-2.png" alt="spx2-2.png"  ) 
+						li.nav-item
+							a#img3-tab.nav-link(data-toggle='pill' href='#img3' role='tab' aria-controls='img3' aria-selected='false') 
+								img(src="../../images/spx2-3.png" alt="spx2-3.png"  ) 
+						li.nav-item
+							a#img4-tab.nav-link(data-toggle='pill' href='#img4' role='tab' aria-controls='img4' aria-selected='false') 
+								img(src="../../images/spx2-4.png" alt="spx2-4.png"  )
+						li.nav-item
+							a#img5-tab.nav-link(data-toggle='pill' href='#img5' role='tab' aria-controls='img5' aria-selected='false') 
+								img(src="../../images/spx2-5.png" alt="spx2-5.png"  )
+				.producDetail__body--content.col-12.col-lg-6
+					header.producDetail__body--header 
+						h3.nameProduct Cây dạ lam	
+						div.star(style='color :yellow ')
+							i.fas.fa-star
+							i.fas.fa-star
+							i.fas.fa-star
+							i.fas.fa-star
+							i.fas.fa-star
+						span.card-text.mr-2(style='color:red;') 400.000 VND
+						span(style='text-decoration: line-through; color:#706a6a;').card-text-price 520.000 VND
+					section.producDetail__body--descr 
+							p cây mọc thành bụi thưa, thân vươn thẳng với chiều 
+								|cao cây trung bình từ 0.8-1.2m. Lá hình trứn,mép lá 
+								|nguyên, gân lá nổi rõ, phiến rộng khoảng từ 15-20cm. 
+								|Lá có mày xanh đậm ở mặt trên,quanh gân có màu trắng sữa, mặt dưới lá màu nhạt hơn,
+								| lá cây dạ lam mọc cahcs , cuống lá dài khi rụng để lại cái khía màu nâu nhạt
+					section.producDetail__body--number.d-flex 
+						span.mr-2 Số Lượng
+						button.count -
+						button.number 1
+						button.count + 
+					section.link 
+						a(href="#").buyNow.mr-3 MUA NGAY 
+						a(href="#").search.mr-3
+							i.fas.fa-search
+						input#checkHeard.mr-3(type="checkbox", name="checkHeard" hidden) 
+						label(for="checkHeard")
+							i.fas.fa-heart
+							i.far.fa-heart 
+						div.evaluate.d-flex.mt-2
+							section.body__tooltip.facebook.mr-5
+								.quote 0
+								.content
+									i.fab.fa-facebook-square.mr-1 
+									span Like
+							section.body__tooltip.tweet.mr-5
+								.quote 15
+								.content
+									i.fab.fa-twitter.mr-1 
+									span tweet
+							section.body__tooltip.plus.mr-5
+								.quote 10
+								.content
+									i.fas.fa-plus-square.mr-1 
+									span share
+			.productDetail__body--tab 
+				ul.nav.nav-tabs(role='tablist')
+					li.nav-item
+						a.nav-link.active(data-toggle='tab' href='#tabs-1' role='tab') THÔNG TIN SẢN PHẨM
+					li.nav-item
+						a.nav-link(data-toggle='tab' href='#tabs-2' role='tab') KHÁCH HÀNG ĐÁNH GIÁ
+					li.nav-item
+						a.nav-link(data-toggle='tab' href='#tabs-3' role='tab') THẺ TAG
+					// Tab panes
+				.tab-content
+					#tabs-1.tab-pane.active(role='tabpanel')
+						p Tên phổ thông :  dạ lam ,Huỳnh tình cảnh,Dong vần.
+						p Ten khoa học :  calathera Z 
+						p Họ thực vật :  Củ dong
+						p Chiều cao :  0.8-1.2m
+						p cây mọc thành bụi thưa, thân vươn thẳng với chiều 
+							|cao cây trung bình từ 0.8-1.2m. Lá hình trứn,mép lá 
+							|nguyên, gân lá nổi rõ, phiến rộng khoảng từ 15-20cm. 
+							|Lá có mày xanh đậm ở mặt trên,quanh gân có màu trắng sữa, mặt dưới lá màu nhạt hơn,
+							| lá cây dạ lam mọc cahcs , cuống lá dài khi rụng để lại cái khía màu nâu nhạt
+					#tabs-2.tab-pane(role='tabpanel')
+						p sản phẩm có chất lượng tốt,sẽ ghé lại cửa hàng lần sau
+						p Tên phổ thông : dạ lam ,Huỳnh tình cảnh,Dong vần.
+						p Ten khoa học : calathera Z 
+						p Họ thực vật : Củ dong
+						p Chiều cao : 0.8-1.2m
+					#tabs-3.tab-pane(role='tabpanel')
+						p Third Panel
+			.main__container--product 
+				.container__product
+					.container__product--title 
+						span Sản Phẩm cùng loại
+						.button
+							a.caro(href='#demo1' data-slide='prev' style='opacity: 1; left: -10%;').mr-1
+								i.fas.fa-chevron-left(style='color:#5969f6; font-size:30px;')
+							a.caro(href='#demo1' data-slide='next' style='opacity: 1; transform: rotate(-180deg); right: -10%;').mr-1
+								i.fas.fa-chevron-right(style='color:#5969f6; font-size:30px;')
+					.container__product--body 
+						.container.pb-5.position-relative
+							#demo1.carousel.slide.position-relative(data-ride='carousel')
+								// Indicators
+								ul.carousel-indicators
+									li(data-target='#demo1' data-slide-to='0')
+									li.active(data-target='#demo1' data-slide-to='1')
+									li(data-target='#demo1' data-slide-to='2')
+								// The slideshow
+								.carousel-inner
+									.carousel-item.active.carousel-item-left
+										.container__product--body1.d-flex
+											div.displaynone.d-md-block.d-none
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
+											div.displaynone.d-xl-block.d-none
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+											div.displaynone
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+											div.displaynone
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+									.carousel-item.carousel-item-next.carousel-item-left
+										.container__product--body1.d-flex
+											div.displaynone.d-md-block.d-none
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
+											div.displaynone.d-xl-block.d-none
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+											div.displaynone
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+											div.displaynone
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+									.carousel-item
+										.container__product--body1.d-flex
+											div.displaynone.d-md-block.d-none
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
+											div.displaynone.d-xl-block.d-none
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+											div.displaynone
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+											div.displaynone
+												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])

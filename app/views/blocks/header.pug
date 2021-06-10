@@ -46,25 +46,26 @@ header
                         ul.navbar-nav
                             li.nav-item.p-1
                                 i.fas.fa-bars
-                            li.nav-item.p-1.dropdown
+                            li.nav-item.p-1.dropdown(class=active1)
                                 a.nav-link.text-white(href='index.html' role='button')
                                     | TRANG CHỦ
-                            li.nav-item.p-1.dropdown
+                            li.nav-item.p-1.dropdown(class=active2)
                                 a#navbarDropdown.nav-link.text-white.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
                                     | GIỚI THIỆU
-                            li.nav-item.p-1.dropdown
+                            li.nav-item.p-1.dropdown(class=active3)
                                 a#navbarDropdown.nav-link.text-white.dropdown-toggle(href='#product.html' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
                                     | SẢN PHẨM
                                 .dropdown-menu.border-top.border-warning(aria-labelledby='navbarDropdown')
                                     a.dropdown-item(href='product.html') Danh sách sản phẩm
                                     a.dropdown-item(href='product-detail.html') Sản phẩm chi tiết
-                            li.nav-item.p-1.dropdown
+                            li.nav-item.p-1.dropdown(class=active4)
                                 a#navbarDropdown.nav-link.text-white.dropdown-toggle(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
                                     | SẢN PHẨM MỚI
                                 .dropdown-menu.border-top.border-warning(aria-labelledby='navbarDropdown')
                                     a.dropdown-item(href='#') SẢN PHẨM 1
                                     a.dropdown-item(href='#') SẢN PHẨM 1
-                            li.nav-item.p-1
+                            li.nav-item.p-1(class=active5)
                                 a.nav-link.text-white(href='#') TIN TỨC
                     i.fas.fa-shopping-cart.d-lg-none.ml-auto
-                    i.fas.fa-search.d-lg-none.ml-3     
+                    i.fas.fa-search.d-lg-none.ml-3 
+                    

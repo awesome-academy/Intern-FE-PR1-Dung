@@ -3,6 +3,11 @@ block mixins
 block vars
 	-title = 'Site'
 	-bodyClass = ''
+	-active1 =''
+	-active2 =''
+	-active3 =''
+	-active4 =''
+	-active5 =''
 
 doctype html
 html(lang="en")
@@ -21,13 +26,10 @@ html(lang="en")
 		link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css")
 		link(rel='preconnect' href='https://fonts.gstatic.com')
 		link(href='https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap' rel='stylesheet')
-
 	body(class=bodyClass)
 		.wrapper
-			block header 
-				include ../blocks/header
+			include ../blocks/header
 			block container
-			block footer
-				include ../blocks/footer
+			include ../blocks/footer
 		block layer
 			include ../blocks/scripts

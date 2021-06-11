@@ -91,3 +91,20 @@ mixin itemcart(array)
             td
                 a(href="#") 
                     i.fas.fa-trash-alt
+
+mixin newsCard(url,content)
+    article.card.border-0.d-flex.flex-row.mb-3
+        img.card-img-top(src=url alt='Card image cap').mr-1
+        a(href="news-detail.html").card-text=content
+
+mixin newsCardColumn(title,url,content)
+    article.card.mb-2.mb-md-5.border-0
+        .card-body
+            h5.card-title.mb-3
+                a(href="news-detail.html")=title  
+            small.text-muted.d-flex.mb-2.ml-2 
+                i.mr-3.fas.fa-table &nbsp; 20/11/2015
+                i.mr-3.far.fa-clock &nbsp; 11:20:00 AM
+                i.mr-3.far.fa-comment-dots &nbsp; 0 Bình luận
+            img.card-img-top.mb-2(src=url alt='news image')
+            p.card-text=content 

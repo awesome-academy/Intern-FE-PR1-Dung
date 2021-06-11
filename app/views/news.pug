@@ -4,3 +4,64 @@ block vars
 	-title = 'Green House news'
 	-bodyClass = 'news'
 block container
+	section.news-wrap.container
+			nav(aria-label='breadcrumb')
+				ol.breadcrumb
+					li.breadcrumb-item
+						a(href='index.html') Home
+					li.breadcrumb-item.active(aria-current='page') Danh sách sản phẩm
+			main.news__body.row
+				aside.col-3.d-xl-block.d-none
+					.navbar__list 
+						.navbar__list--title 
+							span Danh sách sản phẩm
+						+Nav(['Cây chậu treo(10)','Cây có hoa(5)','Cây dây leo','Cây để bàn','Cây may mắn','Cây trang trí','Cây nội thất'])
+					.navbar__newsHighlights
+						.navbar__newsHighlights--title
+							span Tin tức nổi bật
+						.navbar__newsHighlight--body.mt-3 
+							+newsCard('../../images/spx2-1.png','Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng')
+							+newsCard('../../images/spx2-1.png','Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc')
+							+newsCard('../../images/spx2-1.png','Loại cây xanh để bàn đang được giới văn phòng ưa chuộng')
+							+newsCard('../../images/spx2-1.png','Những sai lầm nên tránh khi bố trí cây xanh trong nhà')
+							+newsCard('../../images/spx2-1.png','Những lợi ích của việc trồng cây xanh tại văn phòng')
+					.navbar__blogtag 
+						.navbar__blogtag--title.mb-3 
+							span Blog tag
+						.navbar__blogtag--body 
+							.blogtag__Item.active
+								| Cây văn phòng			
+							.blogtag__Item 
+								| Cây phát lộc
+							.blogtag__Item 
+								| Cây xanh
+							.blogtag__Item 
+								| Cây trang trí			
+							.blogtag__Item 
+								| Cây	
+							.blogtag__Item 
+								| Cây sức khỏe	
+							.blogtag__Item 
+								| Cây quà tặng		
+							.blogtag__Item 
+								| Cây Lưu niệm	
+							.blogtag__Item 
+								| Plants	
+				section.col-12.col-xl-8
+					+newsCardColumn('Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng','../../images/news1.jpg','Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc, cách bố trí cây cảnh các vị trí trong nhà, hướng dẫn bố trí cây cảnh nội thất trong nhà... Bài trí cây cảnh hợp phòng thủy phát huy tác dụng và hút lộc, cây xanh trong nhà, cây cảnh...')
+					+newsCardColumn('Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc','../../images/news2.jpg','Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng, Bạn muốn tạo bầu không khí mới lạ cho văn phòng của mình bằng những chậu cây xanh, Hay đơn giản chỉ là sáng tạo một chút khi bố trí nội thất để tạo điểm nhấn cho văn phòng của mình? Bạn muốn ...')
+					+newsCardColumn('Những sai lầm nên tránh khi bố trí cây xanh trong nhà','../../images/news3.jpg','Từ xưa đến nay, người ta vẫn quan niệm rằng, việc trồng cây xanh trong nhà không chỉ tạo thêm sinh khí, làm cho căn nhà trở nên hài hòa hơn mà còn mang rất nhiều ý nghĩa về mặt phong thủy. Tuy nhiên, một số sai lầm mắc phải khi lựa chọn và bố trí...')
+					+newsCardColumn('Loại cây xanh để bàn đang được giới văn phòng ưa chuộng','../../images/news-4.jpg','Loại cây xanh để bàn đang được giới văn phòng ưa chuộng, Những mẫu cây để bàn đang được giới văn phòng ưa chuộng, cây cảnh văn phòng để bàn thông dụng, những cây cảnh được giới văn phòng ưa chuộng, cây xanh văn phòng để bàn ưa chuộng, những mẩu c...')
+					+newsCardColumn('Những lợi ích của việc trồng cây xanh tại văn phòng','../../images/news5.jpg','Luôn mang lại nhiều lợi ích nếu như chúng ta đặt ở văn phòng làm việc : Đem lại những cảnh quan thiên nhiên thu nhỏ trong phòng làm việc của bạn Điều hòa khí hậu, không khí , giảm nhiệt độ tiếng ồn, mang lại vẻ tươi mát giúp cho nhân ...')
+					nav(aria-label='Page navigation example').mt-5.d-flex.d-flex.justify-content-end.mr-4
+						ul.pagination
+							li.page-item
+								a.page-link(href='#') Trang trước
+							li.page-item
+								a.page-link(href='#') 1
+							li.page-item
+								a.page-link(href='#') 2
+							li.page-item
+								a.page-link(href='#') 3
+							li.page-item
+								a.page-link(href='#') Trang tiếp 

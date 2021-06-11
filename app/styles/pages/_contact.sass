@@ -1,0 +1,26 @@
+@import '../helpers/_variables'
+@import '../helpers/_mixins'
+.contact__body
+    @media screen and ( max-width: 500px  )
+        font-size: 90%
+    color: $colortext 
+    iframe
+        width: 100% 
+    input, textarea
+        @include prefix(border-radius , 30px !important )
+        @include prefix(transition, all 0.5s )
+        &:focus
+            @include prefix(transform , scaleX(1.05))
+    label
+        color: black
+    h2, i
+        color: $colorSuccess
+    h2
+        
+            
+    textarea
+        resize: none
+    .btn
+        @include btn($colorSuccess ,white )
+    ::placeholder 
+        color: $colortext 

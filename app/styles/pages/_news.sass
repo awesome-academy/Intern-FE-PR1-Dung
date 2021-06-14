@@ -1,0 +1,66 @@
+@import '../helpers/_variables'
+@import '../helpers/_mixins'
+.breadcrumb
+    background: none !important
+
+.news-wrap
+    .news__body
+        a
+            color: black
+            &:hover
+                color: $colorSuccess
+                text-decoration: none
+        aside
+            .navbar__list 
+                .navbar__list--title , 
+                    @include title
+                    span
+                        font-size: 120%
+                .nav
+                    @include navStyle
+            .navbar__newsHighlights 
+                .navbar__newsHighlights--title , 
+                    @include title
+                    span
+                        font-size: 120%
+                .card
+                    @include hoveritemRow
+                    img
+                        width: 30%
+                    
+            .navbar__blogtag 
+                .navbar__blogtag--title , 
+                    @include title
+                    span
+                        font-size: 120%
+                .navbar__blogtag--body
+                    display: flex
+                    flex-wrap: wrap
+                    justify-items: center
+                    justify-content: space-around 
+                    .blogtag__Item
+                        margin-bottom: 10px
+                        cursor: pointer
+                        height: 40px
+                        padding: 5px 10px
+                        display: inline-block
+                        color: black
+                        border: 1px solid $border
+                        @include prefix(transition, all 0.25s )
+                        
+                        &:hover
+                            background: $colorSuccess
+                            color: white   
+                            @include prefix(transform ,scale(1.1 ))
+
+                    .active
+                        background: $colorSuccess
+                        color: white
+                        @include prefix(transform ,scale(1.1 ))
+        section
+            .card
+                small
+                    justify-items: center
+                    flex-wrap: wrap
+                    i
+                        margin-bottom: 0.5rem

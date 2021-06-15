@@ -1,9 +1,9 @@
 extends layout/layout
-
 block vars
-	-title = 'Green House'
+	-title = 'TRANG CHỦ'
 	-bodyClass = 'home-page'
 block container
+	include ./variable.pug
 	main
 		section.main__carosel 
 			#carouselExampleIndicators.carousel.slide(data-ride='carousel')
@@ -20,21 +20,14 @@ block container
 				section.main__container--featuredProducts
 					.container__featureProducts--title 
 						span Sản phẩm nổi bật
-					.container__featureProducts--body.d-flex.justify-content-between.flex-md-row.flex-column
-						.container__featureProducts--body1.d-flex.flex-column
-							+ItemColumn([{width:'width: 96%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-							.container__featureProducts--body1-1.d-flex
-								+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 100%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'}])
-						.container__featureProducts--body2.d-flex.flex-column
-							.container__featureProducts--body2-1.d-flex
-								+ItemColumn([{width:'width: 100%;',url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 100%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},])
-							+ItemColumn([{width:'width: 96%;',url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'}])
+					.container__featureProducts--body
+						+ItemColumn(productNB)
 				section.main__container--PromotionAndBuyMoreProduct.row.mt-3
 					aside.container__PromotionProduct.col-12.col-xl-4
 						.container__PromotionProduct--title 
 							span Sản phẩm mua nhiều
 						.container__PromotionProduct--body 
-							+ItemRow([{url :'../../images/spx2-13.png',name :'cây ngũ gia bì',price:'520.000',pricesub:'640.000'},{url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000'},{width:'width: 100%;',url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',pricesub:'1000.000'},{width:'width: 100%;',url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000'},{width:'width: 100%;',url :'../../images/spx2-4.png',name :'cây vạn lộc',price:'250.000',pricesub:'300.000'},{width:'width: 96%;',url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
+							+ItemRow(productMorebuy)
 					section.container__BuyMoreProduct.col-12.col-xl-8
 						.container__BuyMoreProduct--title 
 							span Sản Phẩm khuyến mãi
@@ -44,60 +37,7 @@ block container
 								a.caro(href='#demo' data-slide='next' style='opacity: 1; transform: rotate(-180deg); right: -10%;').mr-1
 									i.fas.fa-chevron-right(style='color:#5969f6; font-size:30px;')
 						.container__BuyMoreProduct--body 
-							.container.pb-5.position-relative
-								#demo.carousel.slide.position-relative(data-ride='carousel')
-									// Indicators
-									ul.carousel-indicators
-										li(data-target='#demo' data-slide-to='0')
-										li.active(data-target='#demo' data-slide-to='1')
-										li(data-target='#demo' data-slide-to='2')
-									// The slideshow
-									.carousel-inner
-										.carousel-item.active.carousel-item-left
-											.container__BuyMoreProduct--body1.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											.container__BuyMoreProduct--body2.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-										.carousel-item.carousel-item-next.carousel-item-left
-											.container__BuyMoreProduct--body1.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											.container__BuyMoreProduct--body2.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-										.carousel-item
-											.container__BuyMoreProduct--body1.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											.container__BuyMoreProduct--body2.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+							+CarouselBodyProduct(dataSaleProduct,'')
 									// Left and right controls	
 				img.mt-2.img-fluid(src='../../images/banner-11140x217.png' alt='banner').mb-5.mt-5
 				.main__container--newProduct 
@@ -109,74 +49,8 @@ block container
 									i.fas.fa-chevron-left(style='color:#5969f6; font-size:30px;')
 								a.caro(href='#demo1' data-slide='next' style='opacity: 1; transform: rotate(-180deg); right: -10%;').mr-1
 									i.fas.fa-chevron-right(style='color:#5969f6; font-size:30px;')
-						.container__newProduct--body 
-							.container.pb-5.position-relative
-								#demo1.carousel.slide.position-relative(data-ride='carousel')
-									// Indicators
-									ul.carousel-indicators
-										li(data-target='#demo1' data-slide-to='0')
-										li.active(data-target='#demo1' data-slide-to='1')
-										li(data-target='#demo1' data-slide-to='2')
-									// The slideshow
-									.carousel-inner
-										.carousel-item.active.carousel-item-left
-											.container__newProduct--body1.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											.container__newProduct--body2.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-										.carousel-item.carousel-item-next.carousel-item-left
-											.container__newProduct--body1.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											.container__newProduct--body2.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-										.carousel-item
-											.container__newProduct--body1.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											.container__newProduct--body2.d-flex
-												div.displaynone.d-md-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-												div.displaynone.d-xl-block.d-none
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-												div.displaynone
-													+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-									// Left and right controls
+						.container__newProduct--body
+							+CarouselBodyProduct(dataNewProduct,'1')
 				article.main__container--news 
 					.container__news--title.mb-3
 						span Tin tức
@@ -196,27 +70,10 @@ block container
 								// The slideshow
 								section.carousel-inner
 									section.carousel-item.active.carousel-item-left
-										div.d-flex
-											.d-none.d-md-block 
-												+newsItem([{url:'../../images/new-1.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Loại cây xanh để bàn đang được giới văn phòng ưa chuộng',content:' Loại cây xanh để bàn đang được giới văn phòng ưa chuộng, Những mẫu cây để bàn đang được giới văn phòng ưa chuộng, câ...'}])
-											div.d-none.d-lg-block 
-												+newsItem([{url:'../../images/new-2.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc',content:' Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc, cách bố trí cây cảnh các vị trí trong nhà, hướng dẫ...'},])
-											div 
-												+newsItem([{url:'../../images/new-3.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng',content:' Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng, Bạn muốn tạo bầu không khí mới lạ cho văn phòng của mình bằng...'}])
+										+newsItem(dataNews)
 									section.carousel-item.carousel-item-next.carousel-item-left
-										div.d-flex
-											.d-none.d-md-block 
-												+newsItem([{url:'../../images/new-1.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Loại cây xanh để bàn đang được giới văn phòng ưa chuộng',content:' Loại cây xanh để bàn đang được giới văn phòng ưa chuộng, Những mẫu cây để bàn đang được giới văn phòng ưa chuộng, câ...'}])
-											div.d-none.d-lg-block 
-												+newsItem([{url:'../../images/new-2.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc',content:' Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc, cách bố trí cây cảnh các vị trí trong nhà, hướng dẫ...'},])
-											div 
-												+newsItem([{url:'../../images/new-3.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng',content:' Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng, Bạn muốn tạo bầu không khí mới lạ cho văn phòng của mình bằng...'}])
+										+newsItem(dataNews)
 									section.carousel-item
-										div.d-flex
-											.d-none.d-md-block 
-												+newsItem([{url:'../../images/new-1.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Loại cây xanh để bàn đang được giới văn phòng ưa chuộng',content:' Loại cây xanh để bàn đang được giới văn phòng ưa chuộng, Những mẫu cây để bàn đang được giới văn phòng ưa chuộng, câ...'}])
-											div.d-none.d-lg-block 
-												+newsItem([{url:'../../images/new-2.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc',content:' Cách bố trí cây cảnh các vị trí quan trọng trong nhà để hút lộc, cách bố trí cây cảnh các vị trí trong nhà, hướng dẫ...'},])
-											div 
-												+newsItem([{url:'../../images/new-3.jpg',subtitle :'Ngày 20 tháng 01 năm 2016',title :'Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng',content:' Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng, Bạn muốn tạo bầu không khí mới lạ cho văn phòng của mình bằng...'}])
-	include ./blocks/popup
+										+newsItem(dataNews)
+	.index_popup.d-none.d-xl-block
+		include ./blocks/popup

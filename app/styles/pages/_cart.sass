@@ -8,21 +8,17 @@
             i
                 color: $colorSuccess
     i
-        color: $colortext
-        
+        color: $colortext  
     table
         text-align: center
-    // overflow-x: scroll 
-    @media screen and ( max-width:1024px  )
+    @include respond(xl)
         font-size: 80%      
         img
-            width: 100px !important
-            height: 100px    
-    @media screen and ( max-width:768px  )
+            @include size(100px !important, 100px)  
+    @include respond(sm)
         font-size: 60% 
         img
-            width: 80px !important
-            height: 80px 
+            @include size(80px !important, 80px)  
         table
             width: 768px
         overflow-x: scroll

@@ -1,0 +1,91 @@
+
+
+@import '../helpers/_mixins'
+@import '../helpers/_variables'
+.news-detail-wrap
+    .news__body
+        h5, h6
+            color: black
+        a
+            color: black
+            &:hover
+                color: $colorSuccess
+                text-decoration: none
+        aside
+            .navbar__list 
+                .navbar__list--title , 
+                    @include title
+                    span
+                        font-size: 120%
+                .nav
+                    @include navStyle
+            .navbar__newsHighlights 
+                &--title , 
+                    @include title
+                    span
+                        font-size: 120%
+                .card
+                    @include hoveritemRow
+                    img
+                        width: 30%
+                    
+            .navbar__blogtag 
+                &--title , 
+                    @include title
+                    span
+                        font-size: 120%
+                &--body
+                    display: flex
+                    flex-wrap: wrap
+                    justify-items: center
+                    justify-content: space-around 
+                    .blogtag__Item
+                        margin-bottom: 10px
+                        cursor: pointer
+                        height: 40px
+                        padding: 5px 10px
+                        display: inline-block
+                        color: black
+                        border: 1px solid $border
+                        @include prefix(transition, all 0.25s )
+                        
+                        &:hover
+                            background: $colorSuccess
+                            color: white   
+                            @include prefix(transform ,scale(1.1 ))
+
+                    .active
+                        background: $colorSuccess
+                        color: white
+                        @include prefix(transform ,scale(1.1 ))
+        .col-12
+            .comment
+                section
+                    .comment-item
+                        i
+                            text-align: end
+                        border-bottom: 1px solid $border
+                        img
+                            border: 2px solid tomato
+                            padding: 5px
+                            @include size(100px , 100px )
+                            
+                            border-radius: 50%
+            .send__comment
+                textarea
+                    resize: none
+                button
+                    width: 100px
+                    @include btn($colorSuccess ,white )
+    @include respond(xl)
+    
+        font-size: 90%
+    @include respond(sm)
+        font-size: 85%
+    @include respond(xs)
+        font-size: 70%  
+        h5
+            font-size: 120%                 
+    article
+        img
+            width: 100%

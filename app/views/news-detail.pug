@@ -1,0 +1,69 @@
+extends layout/layout
+
+block vars
+    -title = 'Green House news'
+    -bodyClass = 'news-detail'
+block container
+    section.news-detail-wrap.container
+        nav(aria-label='breadcrumb')
+            ol.breadcrumb
+                li.breadcrumb-item
+                    a(href='index.html') Home
+                li.breadcrumb-item.active(aria-current='page') Chi tiết tin tức
+        main.news__body.row
+            aside.col-3.d-xl-block.d-none
+                .navbar__list 
+                    .navbar__list--title 
+                        span Danh sách sản phẩm
+                    +Nav(['Cây chậu treo(10)','Cây có hoa(5)','Cây dây leo','Cây để bàn','Cây may mắn','Cây trang trí','Cây nội thất'])
+                .navbar__newsHighlights
+                    .navbar__newsHighlights--title
+                        span Tin tức nổi bật
+                    .navbar__newsHighlight--body.mt-3 
+                        +newsCard(news)
+                        
+                .navbar__blogtag 
+                    .navbar__blogtag--title.mb-3 
+                        span Blog tag
+                    .navbar__blogtag--body 
+                        +blogtag(type)
+                        
+            .col-xl-8.col-12 
+                article 
+                    h5.title.mb-3 Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng
+                    small.text-muted.d-flex.mb-2.ml-2 
+                        i.mr-3.fas.fa-table &nbsp; 20/11/2015
+                        i.mr-3.far.fa-clock &nbsp; 11:20:00 AM
+                        i.mr-3.far.fa-comment-dots &nbsp; 0 Bình luận
+                    img.img-top.mb-2(src='../../images/news1.jpg' alt='news image')
+                    p.text Hướng dẫn lựa chọn cây cảnh trang trí trong văn phòng, Bạn muốn tạo bầu không khí mới lạ cho văn phòng của mình bằng những chậu cây xanh, Hay đơn giản chỉ là sáng tạo một chút khi bố trí nội thất để tạo điểm nhấn cho văn phòng của mình? Bạn muốn tạo bầu không khí mới lạ cho văn phòng của mình bằng những chậu cây xanh?
+                                |Hay đơn giản chỉ là sáng tạo một chút khi bố trí nội thất để tạo điểm nhấn cho văn phòng của mình?
+                                |Bạn không biết chọn loại cây nào cho phù hợp với không gian văn phòng của mình. Green-shop xin nêu ra một số gợi ý giúp bạn chọn được loại cây xanh phù hợp:
+                    h6.title.mb-3 Mục đích sử dụng
+                    p.text Mục đích lớn nhất của việc trồng cây xanh chính là cải thiện môi trường sống và điều hòa không khí xung quanh, tạo nên một môi trường sống và làm việc thoải mái cho những người sử dụng.Bên cạnh đó, bạn có thể cân nhắc những lợi ích khác mà bạn muốn đạt được khi quyết định trang trí văn phòng của mình bằng những chậu cây xanh để tối ưu hóa lựa chọn của mình. Ví dụ:
+                    p.text
+                        |- Tạo điểm nhấn khi trang trí nội thất cho văn phòng: cây xanh được trang trí ở những vị trí thích hợp có thể tạo nên hiệu ứng khác nhau, làm cho văn phòng làm việc có thể trở nên hài hòa, sang trọng…tùy thuộc vào từng thiết kế.
+                    p.text
+                        |- Coi như một vật phong thủy, tạo sinh khí và tài lộc cho doanh nghiệp: mỗi loại cây cảnh đều có ý nghĩa phong thủy nhất định, bạn thể lựa chọn những loại cây cảnh có ý nghĩa phong thủy phù hợp với mục đích của mình.
+                    p.text
+                        |-  Khử độc không khí, phòng ngừa bệnh tật: nghiên cứu cho thấy, nhiều loại cây cảnh, đặc biệt là cây thường xuân, cây xanh có lá sáp, cây thuộc họ dương xỉ có tác dụng khử độc không khí, giúp ngăn ngừa bệnh tật hiệu quả.
+                    img.img-top.mb-2(src='../../images/news2.jpg' alt='news image')
+                .comment 
+                    h5.comment-title.mt-5 Bình luận(3)
+                    +commentTo('Nguyễn Quốc Dũng','../../images/avt.png','Khử độc không khí, phòng ngừa bệnh tật: nghiên cứu cho thấy, nhiều loại cây cảnh, đặc biệt là cây thường xuân, cây xanh có lá sáp, cây thuộc họ dương xỉ có tác dụng khử độc không khí, giúp ngăn')
+                    +commentReply('Nguyễn Quốc Dũng','../../images/avt.png','Khử độc không khí, phòng ngừa bệnh tật: nghiên cứu cho thấy, nhiều loại cây cảnh, đặc biệt là cây thường xuân, cây xanh có lá sáp, cây thuộc họ dương xỉ có tác dụng khử độc không khí, giúp ngăn')
+                    +commentTo('Nguyễn Quốc Dũng','../../images/avt.png','Khử độc không khí, phòng ngừa bệnh tật: nghiên cứu cho thấy, nhiều loại cây cảnh, đặc biệt là cây thường xuân, cây xanh có lá sáp, cây thuộc họ dương xỉ có tác dụng khử độc không khí, giúp ngăn')
+                form.send__comment
+                    h5.comment-title.mt-5.mb-5 Viết bình luận :
+                    .form-row
+                        .form-group.col-md-4.pr-1
+                            input.form-control(type='text' placeholder='Họ và Tên')
+                        .form-group.col-md-4.pr-1
+                            input.form-control(type='text' placeholder='email')
+                        .form-group.col-md-4.pr-1
+                            input.form-control(type='text' placeholder='Số điện thoại')
+                    .form-group
+                        textarea#exampleFormControlTextarea1.form-control(rows='3' placeholder='Bình Luận')
+                    .button.d-flex.jsutify-content-end 
+                        button.btn.btn-primary.ml-auto.mb-2(type='submit') Send
+

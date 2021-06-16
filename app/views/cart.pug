@@ -4,7 +4,6 @@ block vars
 	-title = 'Green House cart'
 	-bodyClass = 'cart'
 block container
-block container
 	section.cart 
 		.cart__wrap.container 
 			nav(aria-label='breadcrumb')
@@ -23,11 +22,7 @@ block container
 							th(scope='col') Số Lượng
 							th(scope='col') Thành tiền
 							th(scope='col') Xóa
-					tbody
-						+itemcart([{url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000',count:2}])
-						+itemcart([{url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',count:2}])
-						+itemcart([{url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000',count:2}])
-
+					+itemcart([{url :'../../images/spx2-8.png',name :'cây cung điện',price:'520.000',count:2},{url :'../../images/spx2-14.png',name :'cây tài lộc',price:'420.000',count:2},{url :'../../images/spx2-11.png',name :'cây phát tài',price:'300.000',count:2}])
 				.link.d-flex.justify-content-end 
 					a(href="index.html").mr-3 HỦY ĐƠN HÀNG  
 					a(href="#") TIẾP TỤC MUA 			

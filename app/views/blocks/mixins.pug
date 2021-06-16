@@ -7,9 +7,9 @@ mixin Nav(array)
 
 //- product item column 
 mixin ItemColumn(array)
-    each val in array
-        div(style=val.width,class=val.pricesub? 'card mr-4 mt-4 position-relative item-subprice ':' position-relative card mr-4 mt-4  ')
-            .imgcard.d-lg-block.d-none
+    each val,index in array
+        div(style=val.width,class=val.pricesub? `card mr-4 mt-4 p-2 position-relative item-subprice` :` cardNB-${index+1} p-2 position-relative card mr-4 mt-4  `)
+            .imgcard.d-xl-block.d-none
             img.card-img-top(src=val.url alt='Card image cap')
             .card-body(style='text-align:center')
                 h5.card-title
@@ -24,10 +24,16 @@ mixin ItemColumn(array)
                 if(val.pricesub)
                     span(style='text-decoration: line-through; color:#706a6a;').card-text-price=val.pricesub
             .hoverShow.position-absolute
-                button.btn.btn-success.addcart(type='button') thêm vào giỏ hàng
-                button.btn.btn-success.mb-3(type='button') 
+                button.btn.btn-success.addcart.mt-3.d-none.d-xl-inline-block(type='button') ADD TO CART
+                button.btn.d-inline-block.d-xl-none
+                    i.fas.fa-shopping-cart
+                button.btn.btn-success(type='button') 
                     i.fas.fa-search
-                    
+mixin itemCarouselProduct(array)
+    .container__newProduct--body1.d-flex
+        +ItemColumn(array) 
+    .container__newProduct--body2.d-flex   
+        +ItemColumn(array) 
 mixin ItemRow(array)
     each val in array
         div(class=val.pricesub? 'card mr-4 mt-1 position-relative item-subprice p-1 flex-column flex-sm-row justify-content-center':'justify-content-center position-relative card mr-4 mt-1 p-1 flex-column flex-sm-row ' )
@@ -47,16 +53,16 @@ mixin ItemRow(array)
                     span(style='text-decoration: line-through; color:#706a6a;').card-text-price=val.pricesub
 
 mixin newsItem(array)
-    each val in array 
-        .card.mr-3.border-none(style='height :400px;')
-            img.card-img-top.img-fluid(src=val.url alt='Card image cap')
-            .card-body
-                a.mb-2.card-title
-                    h5=val.title
-                h6.mb-1.card-subtitle.mb-2.text-muted=val.subtitle
-                p.mb-1.card-text=val.content
-                a.card-link(href='#news') Đọc tiếp...
-    
+    div.d-flex.cardNews
+        each val,index in array 
+            .card.mr-3.border-none
+                img.card-img-top.img-fluid(src=val.url alt='Card image cap')
+                .card-body
+                    a.card-title(href='news-detail.html')
+                        h5.mb-3=val.title
+                    h6.mb-1.card-subtitle.mb-2.text-muted=val.subtitle
+                    p.mb-1.card-text=val.content
+                    a.card-link(href='#news') Đọc tiếp...
 mixin ItemList(array)
     each val in array
         div(class=val.pricesub? 'card mr-4 mt-1 position-relative item-subprice p-1 flex-row':' position-relative card mr-4 mt-1 p-1 flex-row ' style ='height : auto')
@@ -75,7 +81,9 @@ mixin ItemList(array)
                 if(val.pricesub)
                     span(style='text-decoration: line-through; color:#706a6a;').card-text-price=val.pricesub
                 h6.content=val.content
-                button.btn.btn-success.addcart(type='button') thêm vào giỏ hàng
+                button.btn.btn-success.addcart.d-none.d-xl-inline-block(type='button') thêm vào giỏ hàng
+                button.btn.d-inline-block.d-xl-none
+                    i.fas.fa-search
                 button.btn.btn-success(type='button') 
                     i.fas.fa-search
 mixin itemcart(array)
@@ -92,19 +100,78 @@ mixin itemcart(array)
                 a(href="#") 
                     i.fas.fa-trash-alt
 
-mixin newsCard(url,content)
-    article.card.border-0.d-flex.flex-row.mb-3
-        img.card-img-top(src=url alt='Card image cap').mr-1
-        a(href="news-detail.html").card-text=content
+mixin newsCard(array)
+    each val in array 
+        article.card.border-0.d-flex.flex-row.mb-3
+            img.card-img-top(src=val.url alt='Card image cap').mr-1
+            a(href="news-detail.html").card-text=val.content
 
-mixin newsCardColumn(title,url,content)
-    article.card.mb-2.mb-md-5.border-0
-        .card-body
-            h5.card-title.mb-3
-                a(href="news-detail.html")=title  
-            small.text-muted.d-flex.mb-2.ml-2 
-                i.mr-3.fas.fa-table &nbsp; 20/11/2015
-                i.mr-3.far.fa-clock &nbsp; 11:20:00 AM
-                i.mr-3.far.fa-comment-dots &nbsp; 0 Bình luận
-            img.card-img-top.mb-2(src=url alt='news image')
-            p.card-text=content 
+mixin newsCardColumn(array)
+    each val in array
+        article.card.mb-2.mb-md-5.border-0
+            .card-body
+                h5.card-title.mb-3
+                    a(href="news-detail.html")=val.title  
+                small.text-muted.d-flex.mb-2.ml-2 
+                    i.mr-3.fas.fa-table &nbsp; 20/11/2015
+                    i.mr-3.far.fa-clock &nbsp; 11:20:00 AM
+                    i.mr-3.far.fa-comment-dots &nbsp; 0 Bình luận
+                img.card-img-top.mb-2(src=val.url alt='news image')
+                p.card-text=val.content 
+mixin commentTo(name,url,content)
+    section.row.mb-5.mt-3 
+        .comment-item.col-9.d-flex
+            img.card-img-top.mr-2(src=url alt='Card image cap')
+            .content
+                h5.name=name 
+                p.card-text=content
+                small.text-muted
+                    | Thứ 7,20/12/2021 12:00 AM
+        a(href="#").link.col-3 
+            i.fas.fa-reply
+
+mixin commentReply(name,url,content)
+    section.row.mb-5
+        a(href="#").link.col-3 
+            i.fas.fa-reply
+        .comment-item.col-9.d-flex
+            .content
+                h5.name=name 
+                p.card-text=content
+                small.text-muted
+                    | Thứ 7,20/12/2021 12:00 AM
+            img.card-img-top(src=url alt='Card image cap')
+
+mixin CarouselBodyProduct(array,i)
+    .container.pb-5.position-relative
+        #demo.carousel.slide.position-relative(data-ride='carousel')
+            ul.carousel-indicators
+                li(data-target=`#demo${i}` data-slide-to='0')
+                li.active(data-target=`#demo${i}` data-slide-to='1')
+                li(data-target=`#demo${i}` data-slide-to='2')
+            .carousel-inner
+                .carousel-item.active.carousel-item-left
+                    +itemCarouselProduct(array)
+                .carousel-item.carousel-item-next.carousel-item-left
+                    +itemCarouselProduct(array)
+                .carousel-item
+                    +itemCarouselProduct(array)
+mixin pagination(total,active)
+    ul.pagination
+        li.page-item
+            a.page-link(href='#') Trang trước
+        - for (let i = 1; i <= total; i++)
+            if (i === active )
+                li.page-item.active
+                    a.page-link(href="#")= i
+            else if ( i > active+1 && i <total-1 )
+                li.page-item.hiddent
+                    a.page-link() .
+            else
+                li.page-item
+                    a.page-link(href="#")= i
+        li.page-item
+            a.page-link(href='#') Trang tiếp 
+mixin blogtag(array)
+    each val in array 
+        .blogtag__Item=val

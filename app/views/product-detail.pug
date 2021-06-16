@@ -4,6 +4,7 @@ block vars
 	-title = 'Green House product-detail'
 	-bodyClass = 'product__detail'
 block container
+	include ./variable.pug
 	section.productDetail 
 		.productDetail__wrap.container 
 			nav(aria-label='breadcrumb')
@@ -14,32 +15,14 @@ block container
 			.productDetail__body.row 
 				.producDetail__body--image.col-12.col-lg-6 
 					#pills-tabContent.tab-content
-							#img1.tab-pane.fade.show.active(role='tabpanel' aria-labelledby='img1-tab')
-								img.img-fluid(src="../../images/spx2-1.png" alt="spx2-1.png" )
-							#img2.tab-pane.fade(role='tabpanel' aria-labelledby='img2-tab')
-								img.img-fluid(src="../../images/spx2-2.png" alt="spx2-2.png" )
-							#img3.tab-pane.fade(role='tabpanel' aria-labelledby='img3-tab')
-								img.img-fluid(src="../../images/spx2-3.png" alt="spx2-3.png" )
-							#img4.tab-pane.fade(role='tabpanel' aria-labelledby='img4-tab')
-								img.img-fluid(src="../../images/spx2-4.png" alt="spx2-4.png" )
-							#img5.tab-pane.fade(role='tabpanel' aria-labelledby='img5-tab')
-								img.img-fluid(src="../../images/spx2-5.png" alt="spx2-5.png" )
+						each val,index in Img 
+							.tab-pane.fade(role='tabpanel' aria-labelledby=`img${index+1}-tab` id=`img${index+1}` class =index==1 ? 'active show':'')
+								img.img-fluid(src=val.src alt=val.alt )
 					ul#pills-tab.nav.nav-pills.mb-3.d-flex.justify-content-center(role='tablist')
-						li.nav-item
-							a#img1-tab.nav-link.active(data-toggle='pill' href='#img1' role='tab' aria-controls='img1' aria-selected='true') 
-								img(src="../../images/spx2-1.png" alt="spx2-1.png"  )
-						li.nav-item
-							a#img2-tab.nav-link(data-toggle='pill' href='#img2' role='tab' aria-controls='img2' aria-selected='false') 
-								img(src="../../images/spx2-2.png" alt="spx2-2.png"  ) 
-						li.nav-item
-							a#img3-tab.nav-link(data-toggle='pill' href='#img3' role='tab' aria-controls='img3' aria-selected='false') 
-								img(src="../../images/spx2-3.png" alt="spx2-3.png"  ) 
-						li.nav-item
-							a#img4-tab.nav-link(data-toggle='pill' href='#img4' role='tab' aria-controls='img4' aria-selected='false') 
-								img(src="../../images/spx2-4.png" alt="spx2-4.png"  )
-						li.nav-item
-							a#img5-tab.nav-link(data-toggle='pill' href='#img5' role='tab' aria-controls='img5' aria-selected='false') 
-								img(src="../../images/spx2-5.png" alt="spx2-5.png"  )
+						each val,index in Img 
+							li.nav-item
+								a.nav-link(class=index==0 ? 'active ':'' id=`img${index+1}-tab` data-toggle='pill' href=`#img${index+1}` role='tab' aria-controls=`img${index+1}` aria-selected=index==0 ? 'true':'false' ) 
+									img(src=val.src alt=val.alt )
 				.producDetail__body--content.col-12.col-lg-6
 					header.producDetail__body--header 
 						h3.nameProduct Cây dạ lam	
@@ -123,43 +106,5 @@ block container
 								i.fas.fa-chevron-left(style='color:#5969f6; font-size:30px;')
 							a.caro(href='#demo1' data-slide='next' style='opacity: 1; transform: rotate(-180deg); right: -10%;').mr-1
 								i.fas.fa-chevron-right(style='color:#5969f6; font-size:30px;')
-					.container__product--body 
-						.container.pb-5.position-relative
-							#demo1.carousel.slide.position-relative(data-ride='carousel')
-								// Indicators
-								ul.carousel-indicators
-									li(data-target='#demo1' data-slide-to='0')
-									li.active(data-target='#demo1' data-slide-to='1')
-									li(data-target='#demo1' data-slide-to='2')
-								// The slideshow
-								.carousel-inner
-									.carousel-item.active.carousel-item-left
-										.container__product--body1.d-flex
-											div.displaynone.d-md-block.d-none
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-											div.displaynone.d-xl-block.d-none
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											div.displaynone
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											div.displaynone
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-									.carousel-item.carousel-item-next.carousel-item-left
-										.container__product--body1.d-flex
-											div.displaynone.d-md-block.d-none
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-											div.displaynone.d-xl-block.d-none
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											div.displaynone
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											div.displaynone
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-									.carousel-item
-										.container__product--body1.d-flex
-											div.displaynone.d-md-block.d-none
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'}])
-											div.displaynone.d-xl-block.d-none
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											div.displaynone
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
-											div.displaynone
-												+ItemColumn([{url :'../../images/spx2-5.png',name :'cây xương rồng',price:'320.000',pricesub:'1000.000'},])
+					.container__product--body
+						+CarouselBodyProduct(dataNewProduct,'1')

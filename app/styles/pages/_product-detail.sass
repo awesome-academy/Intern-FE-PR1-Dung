@@ -82,11 +82,11 @@
                     .carousel-inner
                         .displaynone
                             width: 100%
-                        @media screen and ( max-width:  768px)
+                        @include respond(sm)
                             font-size: 70% !important
                         .card
                             @include hoverItem(75%)
-                            @media screen and ( max-width: 1200px )
+                            @include respond(lg)
                                 .hoverShow
                                     display: none !important
                                 .card-title
@@ -97,14 +97,13 @@
     .main__container--product 
         button
             @include btn($colorSuccess , white )
-    @media screen and ( max-width: 768px )
+    @include respond(sm)
         font-size: 90%
-    @media screen and ( max-width: 487px )
+    @include respond(xs)
         font-size: 85% 
         .nav-pills
             flex-wrap: nowrap 
             .nav-item
-
                 img
                     width: 40px
                     padding: 0

@@ -30,21 +30,24 @@
             width: 100%
             top: 0
             left: 0
-            bottom: 115px
+            bottom: 35%
             position: absolute
             background-color: $colorblackbg
             display: none
             @include prefix(transition,all 0.25s )
-        @media screen and ( max-width: 768px )
+        @include respond(sm)
             &::before
                 display: none
     .hoverShow
         top: 32%
         width: 100%
-        left: 4%
+        left: 5%
+        @include respond(xs)
+            left: 15%
+        
         button
             font-size: $fontsize
-            @media screen and ( max-width:768px  )
+            @include respond(sm)
                 font-size: 70%
             border-radius: 15px !important
             @include prefix(transition,all 0.75s )
@@ -66,7 +69,7 @@
 
                 
 @mixin title
-    @media screen and ( max-width:1024px  )
+    @include respond(xl)
         font-size: 75%
     border-bottom: 1px solid $border
     padding: 1rem
@@ -216,3 +219,14 @@
             border-right:  10px solid $backgroundtooltip
             border-bottom:  10px solid transparent
             border-top: 10px solid transparent
+
+// Break points
+@mixin respond($breakpoint) 
+  @if map-has-key($breakpoints, $breakpoint) 
+    $breakpoint-value: map-get($breakpoints, $breakpoint)
+    @media (max-width: $breakpoint-value) 
+        @content
+
+@mixin size($width, $height)
+    width: $width
+    height: $height

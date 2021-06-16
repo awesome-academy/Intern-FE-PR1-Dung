@@ -4,9 +4,11 @@
     background: none
 .block__table
     a
+        padding: 0.7rem
+        @include btn($colorSuccess, white )
         &:hover
-            i
-                color: $colorSuccess
+            text-decoration: none
+        
     i
         color: $colortext  
     table
@@ -22,3 +24,4 @@
         table
             width: 768px
         overflow-x: scroll
+    

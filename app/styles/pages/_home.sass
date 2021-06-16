@@ -129,3 +129,11 @@ main
         .card
             &:last-child
                 display: none !important
+.carousel-inner
+    .card
+        @include respond(xs)
+            span
+                display: block
+@include respond(xs)
+    padding-right: 0 !important
+    padding-left: 0  !important

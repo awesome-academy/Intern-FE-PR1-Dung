@@ -12,15 +12,15 @@ block container
 					li(data-target='#carouselExampleIndicators' data-slide-to='1')
 				.carousel-inner
 					.carousel-item.active
-						img.d-block.w-100(src='../../images/slider_2.jpg' alt='First slide')
+						img.d-block.w-100(src='images/slider_2.jpg' alt='First slide')
 					.carousel-item
-						img.d-block.w-100(src='../../images/slide-1920x590.png' alt='Second slide')
+						img.d-block.w-100(src='images/slide-1920x590.png' alt='Second slide')
 		section.main__body
 			.main__wrapp.container
 				section.main__container--featuredProducts
 					.container__featureProducts--title 
 						span Sản phẩm nổi bật
-					.container__featureProducts--body
+					#container__featureProducts.container__featureProducts--body
 						+ItemColumn(productNB)
 				section.main__container--PromotionAndBuyMoreProduct.row.mt-3
 					aside.container__PromotionProduct.col-12.col-xl-4

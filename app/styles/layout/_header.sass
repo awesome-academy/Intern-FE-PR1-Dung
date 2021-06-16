@@ -8,7 +8,6 @@ header
             background-color: black
             font-size: 90%
             color: $colorWhite
-            // height: 40px
             .header__top--inner
                 display: flex
                 justify-content: space-between
@@ -72,10 +71,34 @@ header
                                         color: $colorWhite
                         .header__cart 
                             width: 40%
-                            font-size: 20px             
+                            font-size: 20px   
+                        a
+                            color: $colortext          
     .header__navbar
         .navbar-nav
             .nav-item
                 @include hoverNavbar
                 i.fa-bars
                     font-size: 30px !important            
+            .active
+                padding-right: 15px !important
+                position: relative
+                &::before
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    content: ''
+                    width: 80%
+                    height: 2px
+                    background-color: white
+                    @include prefix(transition,all 0.5s )
+                    
+                &::after
+                    @include prefix(transition,all 0.5s )
+                    position: absolute
+                    bottom: 0
+                    left: 0
+                    content: ''
+                    width: 2px
+                    height: 80%
+                    background-color: white
